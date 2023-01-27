@@ -20,7 +20,6 @@ public class CartPage {
 
 
 
-
     @FindBy(xpath="//*[@id=\"root\"]/div[2]/div/div[1]/button[contains(text(),'CONTINUE SHOPPING')]")
     public WebElement continueShoppingButton;
 
@@ -82,7 +81,7 @@ public WebElement productIDByRow(int rowNumber) {
 //    }
 
 
-    }
+//    }
 
 
 
