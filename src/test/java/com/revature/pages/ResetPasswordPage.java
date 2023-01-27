@@ -23,11 +23,23 @@ public class ResetPasswordPage extends Page {
     @FindBy("//h5")
     public WebElement furtherNavigationInfo;
 
+    // new password input field
+    @FindBy("(//input)[2]")
+    public WebElement newPasswordInputField;
+
+    // reset password button
+    @FindBy(xpath = "//button")
+    public  WebElement resetPasswordButton;
+
+    // link to return to login page
+    @FindBy(xpath = "//a[contains(text(),'Return to Login')]")
+    public WebElement returnToLoginLink;
+
     // link to send another reset email
-    @FindBy("//a")
+    @FindBy("//a[contains(text(),'Send another link to your email here')]")
     public WebElement sendAnotherEmailLink;
 
-    // sign up link
+    // sign up for a new account link
     @FindBy("(//a)[2]")
     public WebElement signUpLink;
 
