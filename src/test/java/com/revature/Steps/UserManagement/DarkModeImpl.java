@@ -37,7 +37,4 @@ public class DarkModeImpl {
         throw new io.cucumber.java.PendingException();
     }
 
-
-
-
 }
