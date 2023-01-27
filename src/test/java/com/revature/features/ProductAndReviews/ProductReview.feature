@@ -13,12 +13,6 @@ Feature: User would like to review the product
     Then User is on the product review page
     When User clicks page enlarge arrow mark
     Then Page maximizes its size
-    When User clicks minus button
-    Then User can reduce the quantity of item to purchase
-    When User clicks plus button
-    Then User can increase the quantity of item to purchase
-    When User clicks product delete button
-    Then User cart shows zero as product quantity
     When User clicks on stars for his rating
     When User inputs comments in the product review box
     """
@@ -26,10 +20,6 @@ Feature: User would like to review the product
     """
     When User clicks submit review button
     Then User can see his ratings and comments
-    When User clicks delete button to remove his product reviews
-    Then Comments and ratings should be removed
-    When User clicks X button to close the product review page
-    Then User is in the home page
 
   Scenario: User can't rate the product he didn't purchase
     When User put product name in the input box

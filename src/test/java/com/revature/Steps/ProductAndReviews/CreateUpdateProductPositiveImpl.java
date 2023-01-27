@@ -3,7 +3,7 @@ package com.revature.Steps.ProductAndReviews;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class ChangeUpdateProductPositiveImpl {
+public class CreateUpdateProductPositiveImpl {
 
     @When("Admin types a name {string}")
     public void admin_types_a_name(String string) {

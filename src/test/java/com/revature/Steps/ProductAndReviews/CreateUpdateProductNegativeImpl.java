@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class ChangeUpdateProductNegativeImpl {
+public class CreateUpdateProductNegativeImpl {
 
 
     @Given("The admin is logged in")
