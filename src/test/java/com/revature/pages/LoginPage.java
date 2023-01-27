@@ -5,10 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends Page {
     public WebDriver driver;
 
     public LoginPage(WebDriver driver){
+        super();
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -32,12 +33,5 @@ public class LoginPage {
     // reset password link
     @FindBy(xpath = "//a[text() = 'Reset your password']")
     public WebElement resetPasswordLink;
-
-
-
-
-
-
-
 
 }
