@@ -5,11 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CreateANewProductPage {
-
+public class CreateANewProductPage extends Page
+{
     private WebDriver driver;
 
     public CreateANewProductPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -31,5 +32,4 @@ public class CreateANewProductPage {
 
     @FindBy (xpath = "/html/body/div/div[2]/div/div/button")
     public WebElement createProduct;
-
 }
