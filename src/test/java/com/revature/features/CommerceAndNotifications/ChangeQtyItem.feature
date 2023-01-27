@@ -6,13 +6,13 @@ Feature: CRUD Quantity of item in cart
   Scenario: Increasing item quantity
     Given the User or Admin or Guest is on the homepage and has at least one item in the cart
     When the User or Admin or Guest clicks on the cart icon and goes to the cart page
-    And the User or Admin or Guest clicks the + button
+    And the User or Admin or Guest clicks the plus button
     Then the quantity of items should increase
 
   Scenario: Decreasing item quantity
     Given the User or Admin or Guest is on the homepage and has at least one item in the cart
     When the User or Admin or Guest clicks on the cart icon and goes to the cart page
-    And the User or Admin or Guest clicks the - button
+    And the User or Admin or Guest clicks the minus button
     Then the quantity of items should decrease
 
   Scenario: Removing item from cart
