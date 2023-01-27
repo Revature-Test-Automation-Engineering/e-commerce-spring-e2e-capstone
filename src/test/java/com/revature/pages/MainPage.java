@@ -34,10 +34,10 @@ public class MainPage {
     @FindBy(xpath = "(//div[@class='sc-gsnTZi fiUFVv']//div)[last()]]")
     public WebElement cartButton;
 
-    @FindBy(xpath = "/html/body/div/div[3]/div[4]/div/div[1]/div[1]/span/svg")
+    @FindBy(xpath = "/html/body/div/div[3]/div[4]/div/div[1]/div[1]/span")
     public WebElement addToCart;
 
-    @FindBy(xpath = "/html/body/div/div[3]/div[4]/div/div[1]/div[2]/div/svg")
+    @FindBy(xpath = "/html/body/div/div[3]/div[4]/div/div[1]/div[2]/div")
     public WebElement viewProduct;
 
 }
