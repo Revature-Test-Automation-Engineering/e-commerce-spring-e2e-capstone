@@ -4,28 +4,27 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CartImpl {
-
-    @Given("user is logged in and on the product page")
-    public void user_is_logged_in_and_on_the_product_page() {
+public class Checkout_GuestImpl {
+    @Given("guest has at least one item in the cart")
+    public void guest_has_at_least_one_item_in_the_cart() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the Cart icon on a product is clicked")
-    public void the_cart_icon_on_a_product_is_clicked() {
+    @When("guest goes to cart page and clicks Checkout Now button")
+    public void guest_goes_to_cart_page_and_clicks_checkout_now_button() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the item is added to cart")
-    public void the_item_is_added_to_cart() {
+    @When("guest fills in shipping address and clicks Next button")
+    public void guest_fills_in_shipping_address_and_clicks_next_button() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Given("guest is on the product page")
-    public void guest_is_on_the_product_page() {
+    @Then("guest should be able to select payment method")
+    public void guest_should_be_able_to_select_payment_method() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
