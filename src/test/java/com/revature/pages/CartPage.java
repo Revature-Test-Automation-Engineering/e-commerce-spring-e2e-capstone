@@ -88,7 +88,7 @@ public class CartPage extends Page {
         return rows.get(rowNumber).findElement(By.tagName("img"));
     }
 
-    // GIVES THE NUMBER ITEMS IN THE CART/ NUMBER OF ROWS, RETURNS INTEGER
+    // GIVES THE NUMBER OF ITEMS IN THE CART/ NUMBER OF ROWS, RETURNS INTEGER
     public int amountOfCartRows() {
         List<WebElement> rows = cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
         int rowNumber = rows.size();
