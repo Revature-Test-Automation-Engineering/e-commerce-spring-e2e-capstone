@@ -4,39 +4,39 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class RegisterPositiveImpl {
-    @Given("the user is on the register page")
-    public void the_user_is_on_the_register_page() {
+public class DeactivateAccountImpn {
+    @Given("User logged into the home page")
+    public void user_logged_into_the_home_page() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @When("the user types the first name {string} into the first name input")
-    public void the_user_types_the_first_name_into_the_first_name_input(String string) {
+    @When("User clicks profile button")
+    public void user_clicks_profile_button() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @When("the user types the last name {string} into the last name input")
-    public void the_user_types_the_last_name_into_the_last_name_input(String string) {
+    @Then("User welcome to his dashboard")
+    public void user_welcome_to_his_dashboard() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @When("the user types the email {string} into the email input")
-    public void the_user_types_the_email_into_the_email_input(String string) {
+    @When("User put deactivate in the input field")
+    public void user_put_deactivate_in_the_input_field(String docString) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @When("the user types the password {string} into the password input")
-    public void the_user_types_the_password_into_the_password_input(String string) {
+    @Then("Deactivate button becomes enabled")
+    public void deactivate_button_becomes_enabled() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @When("the user clicks on the Sign Up button")
-    public void the_user_clicks_on_the_sign_up_button() {
+    @When("User clicks DEACTIVATE button")
+    public void user_clicks_deactivate_button() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @Then("the user should be redirected to the login page")
-    public void the_user_should_be_redirected_to_the_login_page() {
+    @Then("User will be logged out to login page")
+    public void user_will_be_logged_out_to_login_page() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
