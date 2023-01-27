@@ -1,6 +1,7 @@
 package com.revature.pages;
 
 
+import org.h2.mvstore.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,11 +10,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class CartPage {
+public class CartPage extends Page {
 
     private WebDriver driver;
 
     public CartPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -70,6 +72,7 @@ public class CartPage {
         return rows.get(rowNumber).findElement(By.className("sc-hBxehG jqVsbC"));
     }
 
+
     // GIVES THE ELEMENT CONTAINING THE PRODUCT ID # BASED UPON ROW NUMBER
     public WebElement productIDByRowNumber(int rowNumber) {
         List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
@@ -94,16 +97,18 @@ public class CartPage {
 
     // THERE ARE 4 INFORMATION BOXES CONTAINIG PRICE INFORMATION
     // THESE ARE THE 4 CORRESPONDING WEB ELEMENTS IN DESCENDING ORDER
-    @FindBy(xpath="//*[@id=\"root\"]/div[2]/div/div[2]/div[2]/div[1]/span[2]")
+    //body/div[@id='root']/div[2]/div[1]/div[2]/div[2]/div[1]/span[2]
+    @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[2]/div[2]/div[1]/span[2]")
     public WebElement subtotalAmount;
 
-    @FindBy(xpath="//*[@id=\"root\"]/div[2]/div/div[2]/div[2]/div[2]/span[3]")
+    @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[2]/div[2]/div[2]/span[2]")
     public WebElement shippingAmount;
 
-    @FindBy(xpath="//*[@id=\"root\"]/div[2]/div/div[2]/div[2]/div[3]/span[2]")
+    @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[2]/div[2]/div[3]/span[2]")
     public WebElement shippingDiscountAmount;
 
-    @FindBy(xpath="//*[@id=\"root\"]/div[2]/div/div[2]/div[2]/div[4]/span[2]")
+
+    @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[2]/div[2]/div[4]/span[2]")
     public WebElement totalPriceAmount;
 
 
