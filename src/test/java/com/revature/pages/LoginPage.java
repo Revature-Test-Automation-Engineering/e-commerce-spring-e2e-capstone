@@ -23,19 +23,19 @@ public class LoginPage {
     public WebElement theme_switch;
 
     // register button on nav bar
-    @FindBy()
+    @FindBy(xpath = "//strong[text() = 'REGISTER']")
     public WebElement registerButton;
 
     // sign in button on nav bar
-    @FindBy(xpath="//button[text() = 'Sign In']")
-    public WebElement signInButton;
+    @FindBy(xpath="//strong[text() = 'SIGN IN']")
+    public WebElement signInNav;
 
     // cart button on nav bar
-    @FindBy()
+    @FindBy(xpath = "(//div[@class='sc-gsnTZi fiUFVv']//div)[last()]")
     public WebElement cartButton;
 
     // email address input field
-    @FindBy()
+    @FindBy(xpath = "(//input)[2]")
     public WebElement email_field;
 
     // password input field
@@ -43,15 +43,15 @@ public class LoginPage {
     public WebElement passwordField;
 
     // sign in button
-    @FindBy()
+    @FindBy(xpath = "//button")
     public WebElement signInButton;
 
     // sign up link
-    @FindBy()
+    @FindBy(xpath = "//a")
     public WebElement signUpLink;
 
     // reset password link
-    @FindBy()
+    @FindBy(xpath = "//a[text() = 'Reset your password']")
     public WebElement resetPasswordLink;
 
 
