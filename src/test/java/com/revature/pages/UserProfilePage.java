@@ -44,7 +44,7 @@ public class UserProfilePage {
     @FindBy(xpath = "/html/body/div/main[2]/div/form/div/div[4]/div[1]/button")
     public WebElement addPayment;
 
-    @FindBy(xpath="//button[text() = 'DELETE']")
+    @FindBy(xpath="//button[contains(text(),'DELETE')][last()]")
     public WebElement deleteButton;
 
 }
