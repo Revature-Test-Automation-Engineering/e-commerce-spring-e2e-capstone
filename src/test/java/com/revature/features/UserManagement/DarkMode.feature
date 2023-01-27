@@ -1,7 +1,7 @@
 Feature: User, Admin & Guest can change between Dark Mode and normal mode
 
   Scenario Outline: User or admin turns on dark mode
-    Given user/admin is logged in using "<username>" and "<password>"
+    Given user or admin is logged in using "<username>" and "<password>"
     And the dark mode is off
     When the dark mode switch is toggled
     Then dark mode should be turned on
@@ -12,7 +12,7 @@ Feature: User, Admin & Guest can change between Dark Mode and normal mode
       | wirtualtm@example.com   | pass123   |
 
   Scenario Outline: User or admin turns off dark mode
-    Given user/admin is logged in using "<username>" and "<password>"
+    Given user or admin is logged in using "<username>" and "<password>"
     And the dark mode is on
     When the dark mode switch is toggled
     Then dark mode should be turned off
