@@ -21,10 +21,10 @@ public class CartPage extends Page {
 
 
     //BUTTONS
-    @FindBy(xpath="//*[@id=\"root\"]/div[2]/div/div[1]/button[contains(text(),'CONTINUE SHOPPING')]")
+    @FindBy(xpath="//*[@id='root']/div[2]/div/div[1]/button[contains(text(),'CONTINUE SHOPPING')]")
     public WebElement continueShoppingButton;
 
-    @FindBy(xpath="//*[@id=\"root\"]/div[2]/div/div[2]/div[2]/button[contains(text(),'CHECKOUT NOW')]")
+    @FindBy(xpath="//*[@id='root']/div[2]/div/div[2]/div[2]/button[contains(text(),'CHECKOUT NOW')]")
     public WebElement checkoutButton;
 
 

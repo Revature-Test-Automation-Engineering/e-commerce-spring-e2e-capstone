@@ -8,11 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class ReviewPage {
+public class ReviewPage extends Page {
 
     public WebDriver driver;
 
-    public ReviewPage(WebDriver driver){ // if this is used for multiple review pages should it intake a url? or is that already handled before by the driver
+    public ReviewPage(WebDriver driver){
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -39,7 +40,7 @@ public class ReviewPage {
     public WebElement submitReviewButton;
 
     @FindBy(xpath="//div[@class='MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root']/div")
-    public WebElement productOverviewDisplay; //if better way of isolating this box is found xpath can be updated
+    public WebElement productOverviewDisplay;
 
     @FindBy(xpath="//div[@class='MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root']/div/h1")
     public WebElement productName;
