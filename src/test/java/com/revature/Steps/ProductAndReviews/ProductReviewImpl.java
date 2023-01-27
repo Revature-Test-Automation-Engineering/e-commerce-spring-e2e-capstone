@@ -37,36 +37,7 @@ public class ProductReviewImpl {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @When("User clicks minus button")
-    public void user_clicks_minus_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("User can reduce the quantity of item to purchase")
-    public void user_can_reduce_the_quantity_of_item_to_purchase() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("User clicks plus button")
-    public void user_clicks_plus_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("User can increase the quantity of item to purchase")
-    public void user_can_increase_the_quantity_of_item_to_purchase() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("User clicks product delete button")
-    public void user_clicks_product_delete_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("User cart shows zero as product quantity")
-    public void user_cart_shows_zero_as_product_quantity() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
     @When("User clicks on stars for his rating")
     public void user_clicks_on_stars_for_his_rating() {
         // Write code here that turns the phrase above into concrete actions
@@ -84,26 +55,6 @@ public class ProductReviewImpl {
     }
     @Then("User can see his ratings and comments")
     public void user_can_see_his_ratings_and_comments() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("User clicks delete button to remove his product reviews")
-    public void user_clicks_delete_button_to_remove_his_product_reviews() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("Comments and ratings should be removed")
-    public void comments_and_ratings_should_be_removed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("User clicks X button to close the product review page")
-    public void user_clicks_x_button_to_close_the_product_review_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("User is in the home page")
-    public void user_is_in_the_home_page() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
