@@ -58,16 +58,6 @@ public class ProductReviewImpl {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @When("User clicks X button to close the product review page")
-    public void user_clicks_x_button_to_close_the_product_review_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("User is in the home page")
-    public void user_is_in_the_home_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 
     @Then("User should get a message that you can't rate a product that you didn't purchase")
     public void user_should_get_a_message_that_you_can_t_rate_a_product_that_you_didn_t_purchase() {
