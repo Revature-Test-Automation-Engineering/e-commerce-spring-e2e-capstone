@@ -58,9 +58,10 @@ public class CartPage extends Page {
 
     // GET PRICE OF ITEM IN THE CART
     public WebElement CartItemPriceByRowNumber(int rowNumber) {
-        List<WebElement> rows = cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
-        return rows.get(rowNumber).findElement(By.xpath(""));
+        List<WebElement> rows = cartBody.findElements(By.xpath("//div"));
+        return rows.get(rowNumber).findElement(By.xpath("//div[contains(text(),'$')]"));
     }
+
 
 
     // GIVES A LIST OF WEB ELEMENTS THAT INCLUDES ALL ROWS IN THE CART
