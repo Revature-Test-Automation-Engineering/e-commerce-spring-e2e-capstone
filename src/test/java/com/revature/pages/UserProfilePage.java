@@ -1,8 +1,7 @@
 package com.revature.pages;
 
 public class UserProfilePage {
-<<<<<<< HEAD
-=======
+
 
     private WebDriver driver;
 
@@ -44,5 +43,5 @@ public class UserProfilePage {
     @FindBy(xpath="//button[text() = 'DELETE']")
     public WebElement deleteButton;
 
->>>>>>> 97dfa584aadec540266e736eefe24f01ff3babdb
+
 }
