@@ -97,10 +97,9 @@ public class CartPage extends Page {
 
 
     // ORDER SUMMARY BOX/DIV
-
-    // THERE ARE 4 INFORMATION BOXES CONTAINIG PRICE INFORMATION
+    // THERE ARE 4 INFORMATION BOXES CONTAINING PRICE INFORMATION
     // THESE ARE THE 4 CORRESPONDING WEB ELEMENTS IN DESCENDING ORDER
-    //body/div[@id='root']/div[2]/div[1]/div[2]/div[2]/div[1]/span[2]
+
     @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[2]/div[2]/div[1]/span[2]")
     public WebElement subtotalAmount;
 
@@ -110,10 +109,7 @@ public class CartPage extends Page {
     @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[2]/div[2]/div[3]/span[2]")
     public WebElement shippingDiscountAmount;
 
-
     @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[2]/div[2]/div[4]/span[2]")
     public WebElement totalPriceAmount;
-
-
 
 }
