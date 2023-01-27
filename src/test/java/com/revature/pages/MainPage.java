@@ -19,6 +19,9 @@ public class MainPage {
     @FindBy(xpath = "/html/body/div/div[2]/div/div/input")
     public WebElement searchBar;
 
+    @FindBy (xpath = "/html/body/div/div[2]/div/button[2]/svg")
+    public WebElement clearButton;
+
     @FindBy(linkText = "//strong[contains(text(),'REGISTER')]")
     public WebElement register;
 
@@ -30,5 +33,11 @@ public class MainPage {
 
     @FindBy(xpath = "(//div[@class='sc-gsnTZi fiUFVv']//div)[last()]]")
     public WebElement cartButton;
+
+    @FindBy(xpath = "/html/body/div/div[3]/div[4]/div/div[1]/div[1]/span/svg")
+    public WebElement addToCart;
+
+    @FindBy(xpath = "/html/body/div/div[3]/div[4]/div/div[1]/div[2]/div/svg")
+    public WebElement viewProduct;
 
 }
