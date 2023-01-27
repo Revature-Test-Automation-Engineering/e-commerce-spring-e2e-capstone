@@ -16,13 +16,13 @@ public class MainPage {
     }
 
     @FindBy(xpath = "/html/body/div/div[1]/div/div[1]/h1/img")
-    public WebElement mainPageBtn;
+    public WebElement mainPageButton;
 
     @FindBy(xpath = "/html/body/div/div[2]/div/div/input")
     public WebElement searchBar;
 
     @FindBy(xpath = "/html/body/div/div[1]/div/div[2]/span/span[1]/span[1]/input")
-    public WebElement themeBtn;
+    public WebElement themeButton;
 
     @FindBy(linkText = "//strong[contains(text(),'REGISTER')]")
     public WebElement register;
@@ -43,5 +43,5 @@ public class MainPage {
     public WebElement logout;
 
     @FindBy(xpath = "/html/body/div/div[1]/div/div[2]/div[3]/span/svg/path")
-    public WebElement cartBtn;
+    public WebElement cartButton;
 }
