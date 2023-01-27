@@ -4,28 +4,22 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CartImpl {
+public class ViewPreviousOrderImpl {
 
-    @Given("user is logged in and on the product page")
-    public void user_is_logged_in_and_on_the_product_page() {
+    @Given("the User is logged in and is on the homepage")
+    public void the_user_is_logged_in_and_is_on_the_homepage() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the Cart icon on a product is clicked")
-    public void the_cart_icon_on_a_product_is_clicked() {
+    @When("the User clicks on the Orders button")
+    public void the_user_clicks_on_the_orders_button() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the item is added to cart")
-    public void the_item_is_added_to_cart() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Given("guest is on the product page")
-    public void guest_is_on_the_product_page() {
+    @Then("a list of previous orders should be displayed")
+    public void a_list_of_previous_orders_should_be_displayed() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
