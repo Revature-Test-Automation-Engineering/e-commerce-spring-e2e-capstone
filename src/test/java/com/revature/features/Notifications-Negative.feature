@@ -1,4 +1,4 @@
-Feature: Notifications
+Feature: Notifications - Negative
 
   # The notification is supposed to occur after you complete a purchase
   # not sure if you'll have to simulate going through that process
