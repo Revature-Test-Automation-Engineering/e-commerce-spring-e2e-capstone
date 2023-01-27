@@ -5,21 +5,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Page
-{
+
+// this class contains all of the elements on the navigation bar
+public class Page {
 	private WebDriver driver;
 
-	public Page(WebDriver driver)
-	{
+	public Page(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
+	// congo logo button that takes you to the MainPage
 	@FindBy(xpath = "//img")
-	public WebElement mainPageBtn;
+	public WebElement logoNavButton;
 
 	// dark/light theme selector on nav bar
-	@FindBy(class = "PrivateSwitchBase-input-4 MuiSwitch-input");
+	@FindBy(xpath = "//div[@class='sc-gsnTZi fiUFVv']//div[2]//input");
 	public WebElement themeSelector;
 
 	// edit product button on nav bar

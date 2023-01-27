@@ -6,38 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-
     public WebDriver driver;
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
-    /*** nav bar elements ***/
-    // logo on the left of the nav bar
-    @FindBy(class = "congoLogo");
-    public WebElement mainPageButton;
-
-    // dark/light switch button
-    @FindBy(class = "PrivateSwitchBase-input-4 MuiSwitch-input");
-    public WebElement themeSwitch;
-
-    // register button on nav bar
-    @FindBy(xpath = "//strong[text() = 'REGISTER']")
-    public WebElement registerButton;
-
-    // sign in button on nav bar
-    @FindBy(xpath="//strong[text() = 'SIGN IN']")
-    public WebElement signInNavButton;
-
-    // cart button on nav bar
-    @FindBy(xpath = "(//div[@class='sc-gsnTZi fiUFVv']//div)[last()]")
-    public WebElement cartButton;
-
-    /*** end of nav bar elements ***/
-
-
 
     // email address input field
     @FindBy(xpath = "(//input)[2]")
