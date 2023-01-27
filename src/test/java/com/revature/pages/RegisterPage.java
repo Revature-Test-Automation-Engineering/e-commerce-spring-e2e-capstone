@@ -17,7 +17,7 @@ public class RegisterPage {
     /*** nav bar elements ***/
     // logo on the left of the nav bar
     @FindBy(class = "congoLogo");
-    public WebElement mainPageButton;
+    public WebElement logoButton;
 
     // dark/light switch button
     @FindBy(class = "PrivateSwitchBase-input-4 MuiSwitch-input");
@@ -33,7 +33,7 @@ public class RegisterPage {
 
     // cart button on nav bar
     @FindBy(xpath = "(//div[@class='sc-gsnTZi fiUFVv']//div)[last()]")
-    public WebElement cartButton;
+    public WebElement cartNavButton;
 
     /*** end of nav bar elements ***/
 

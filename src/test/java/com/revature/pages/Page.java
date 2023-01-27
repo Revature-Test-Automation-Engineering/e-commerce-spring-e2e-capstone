@@ -15,24 +15,30 @@ public class Page
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "/html/body/div/div[1]/div/div[1]/h1/img")
+	@FindBy(xpath = "//img")
 	public WebElement mainPageBtn;
 
-	@FindBy(xpath = "//span//input")
-	public WebElement themeBtn;
+	// dark/light theme selector on nav bar
+	@FindBy(class = "PrivateSwitchBase-input-4 MuiSwitch-input");
+	public WebElement themeSelector;
 
+	// edit product button on nav bar
 	@FindBy(xpath = "//strong[contains(text(),'EDIT PRODUCTS')]")
-	public WebElement editProduct;
+	public WebElement editProductsNavButton;
 
+	// profile button on nav bar
 	@FindBy(xpath = "//strong[contains(text(),'PROFILE')]")
-	public WebElement profile;
+	public WebElement profileNavButton;
 
+	// orders button on nav bar
 	@FindBy(xpath = "//strong[contains(text(),'ORDERS')]")
-	public WebElement orders;
+	public WebElement ordersNavButton;
 
+	// logout button on nav bar
 	@FindBy(xpath = "//strong[contains(text(),'LOGOUT')]")
-	public WebElement logout;
+	public WebElement logoutNavButton;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div/div[2]/div[3]/span/svg/path")
-	public WebElement cartBtn;
+	// cart button on nav bar
+	@FindBy(xpath = "(//div[@class='sc-gsnTZi fiUFVv']//div)[last()]")
+	public WebElement cartNavButton;
 }
