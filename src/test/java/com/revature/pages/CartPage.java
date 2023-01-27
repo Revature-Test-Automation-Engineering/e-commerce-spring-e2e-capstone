@@ -30,63 +30,67 @@ public class CartPage extends Page {
 
 
     //CART ELEMENTS - DYNAMIC BASED UPON HOW IT GETS POPULATED
-    @FindBy(className="sc-ipEyDJ jIiyfc")
+    @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]")
     public WebElement cartBody;
+
+
+    //       -cartBody-                                            -row-       -2nd button/Garbage button-
+    //xpath: body/div[@id='root']/div[2]/div[1]/div[2]/div[1]-----/div[1]/-----div[2]/div[2]/button[2]
 
     // BUTTON TO INCREASE AMOUNT OF EACH ITEM IN THE CART
     public WebElement increaseCartItemAmountButtonByRowNumber(int rowNumber) {
-        List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
+        List<WebElement> rows = cartBody.findElements(By.xpath("//div"));
         return rows.get(rowNumber).findElement(By.xpath("//button[text() = '+']"));
     }
 
     // BUTTON TO DECREASE AMOUNT OF EACH ITEM IN THE CART
     public WebElement decreaseCartItemAmountButtonByRowNumber(int rowNumber) {
-        List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
+        List<WebElement> rows = cartBody.findElements(By.xpath("//div"));
         return rows.get(rowNumber).findElement(By.xpath("//button[text() = '-']"));
     }
 
     // BUTTON TO DELETE ITEM IN CART - (APPEARS AS GARBAGE EMOJI IN BUTTON)
     public WebElement deleteCartItemButtonByRowNumber(int rowNumber) {
-        List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
-        return rows.get(rowNumber).findElement(By.className("MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"));
+        List<WebElement> rows = cartBody.findElements(By.xpath("//div"));
+        return rows.get(rowNumber).findElement(By.xpath("//div[2]/div[2]/button[2]"));
     }
 
 
     // GET PRICE OF ITEM IN THE CART
     public WebElement CartItemPriceByRowNumber(int rowNumber) {
-        List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
-        return rows.get(rowNumber).findElement(By.className("sc-dmctIk klsUA-d"));
+        List<WebElement> rows = cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
+        return rows.get(rowNumber).findElement(By.xpath(""));
     }
 
 
     // GIVES A LIST OF WEB ELEMENTS THAT INCLUDES ALL ROWS IN THE CART
     public List<WebElement> getCartRows() {
-        return cartBody.findElements(By.className("sc-csuSiG ibiauo"));
+        return cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
     }
 
 
     // GIVES THE ELEMENT CONTAINING THE PRODUCT NAME BASED UPON ROW NUMBER
     public WebElement productNameByRowNumber(int rowNumber) {
-        List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
-        return rows.get(rowNumber).findElement(By.className("sc-hBxehG jqVsbC"));
+        List<WebElement> rows = cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
+        return rows.get(rowNumber).findElement(By.xpath("//div[1]/div[1]/span[1]"));
     }
 
 
     // GIVES THE ELEMENT CONTAINING THE PRODUCT ID # BASED UPON ROW NUMBER
     public WebElement productIDByRowNumber(int rowNumber) {
-        List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
-        return rows.get(rowNumber).findElement(By.className("sc-fnGiBr bbMkKU"));
+        List<WebElement> rows = cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
+        return rows.get(rowNumber).findElement(By.xpath("//div[1]/div[1]/span[2]"));
     }
 
     // GIVES THE ELEMENT THAT CONTAINS THE PRODUCT IMAGE
     public WebElement productImageByRowNumber(int rowNumber) {
-        List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
+        List<WebElement> rows = cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
         return rows.get(rowNumber).findElement(By.tagName("img"));
     }
 
     // GIVES THE NUMBER ITEMS IN THE CART/ NUMBER OF ROWS, RETURNS INTEGER
     public int amountOfCartRows() {
-        List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
+        List<WebElement> rows = cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
         int rowNumber = rows.size();
         return rowNumber;
     }
