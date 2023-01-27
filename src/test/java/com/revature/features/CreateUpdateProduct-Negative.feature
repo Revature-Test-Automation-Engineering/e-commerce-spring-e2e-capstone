@@ -1,4 +1,4 @@
-Feature: Create/Update Product Page
+Feature: Create/Update Product Page - Negative
 
   Scenario: Admin creates a new product with no name
     Given The admin is logged in

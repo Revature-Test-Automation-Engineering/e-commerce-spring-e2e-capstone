@@ -1,4 +1,4 @@
-Feature: Reset Password
+Feature: Reset Password - Positive
 
   Scenario Outline: User resets password with correct credentials
     Given The user is on the Profile page
