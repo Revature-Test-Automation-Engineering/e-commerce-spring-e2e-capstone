@@ -42,6 +42,6 @@ public class MainPage {
     @FindBy(xpath = "//strong[contains(text(),'LOGOUT')]")
     public WebElement logout;
 
-    @FindBy(xpath = "/html/body/div/div[1]/div/div[2]/div[3]/span/svg/path")
+    @FindBy(xpath = "(//div[@class='sc-gsnTZi fiUFVv']//div)[last()]]")
     public WebElement cartButton;
 }
