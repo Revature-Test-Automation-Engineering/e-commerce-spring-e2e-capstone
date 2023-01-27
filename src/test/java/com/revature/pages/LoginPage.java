@@ -14,13 +14,14 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
+    /*** nav bar elements ***/
     // logo on the left of the nav bar
     @FindBy(class = "congoLogo");
     public WebElement mainPageButton;
 
     // dark/light switch button
     @FindBy(class = "PrivateSwitchBase-input-4 MuiSwitch-input");
-    public WebElement theme_switch;
+    public WebElement themeSwitch;
 
     // register button on nav bar
     @FindBy(xpath = "//strong[text() = 'REGISTER']")
@@ -28,15 +29,19 @@ public class LoginPage {
 
     // sign in button on nav bar
     @FindBy(xpath="//strong[text() = 'SIGN IN']")
-    public WebElement signInNav;
+    public WebElement signInNavButton;
 
     // cart button on nav bar
     @FindBy(xpath = "(//div[@class='sc-gsnTZi fiUFVv']//div)[last()]")
     public WebElement cartButton;
 
+    /*** end of nav bar elements ***/
+
+
+
     // email address input field
     @FindBy(xpath = "(//input)[2]")
-    public WebElement email_field;
+    public WebElement emailField;
 
     // password input field
     @FindBy(xpath = "(//input)[3]")
