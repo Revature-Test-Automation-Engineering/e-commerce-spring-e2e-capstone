@@ -1,7 +1,6 @@
 package com.revature.pages;
 
 
-import org.h2.mvstore.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,13 +36,13 @@ public class CartPage extends Page {
     // BUTTON TO INCREASE AMOUNT OF EACH ITEM IN THE CART
     public WebElement increaseCartItemAmountButtonByRowNumber(int rowNumber) {
         List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
-        return rows.get(rowNumber).findElement(By.xpath(By.xpath("//button[text() = '+']");
+        return rows.get(rowNumber).findElement(By.xpath("//button[text() = '+']"));
     }
 
     // BUTTON TO DECREASE AMOUNT OF EACH ITEM IN THE CART
     public WebElement decreaseCartItemAmountButtonByRowNumber(int rowNumber) {
         List<WebElement> rows = cartBody.findElements(By.className("sc-csuSiG ibiauo"));
-        return rows.get(rowNumber).findElement(By.xpath(By.xpath("//button[text() = '-']");
+        return rows.get(rowNumber).findElement(By.xpath("//button[text() = '-']"));
     }
 
     // BUTTON TO DELETE ITEM IN CART - (APPEARS AS GARBAGE EMOJI IN BUTTON)
