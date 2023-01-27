@@ -9,8 +9,8 @@ public class RegisterPage extends Page {
     public WebDriver driver;
 
     public RegisterPage(WebDriver driver){
-        super();
         this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 

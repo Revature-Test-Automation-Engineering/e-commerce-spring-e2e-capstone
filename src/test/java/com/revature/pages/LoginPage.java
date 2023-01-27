@@ -9,8 +9,8 @@ public class LoginPage extends Page {
     public WebDriver driver;
 
     public LoginPage(WebDriver driver){
-        super();
         this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 

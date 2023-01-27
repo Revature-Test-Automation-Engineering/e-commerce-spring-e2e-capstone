@@ -42,4 +42,7 @@ public class Page {
 	// cart button on nav bar
 	@FindBy(xpath = "(//div[@class='sc-gsnTZi fiUFVv']//div)[last()]")
 	public WebElement cartNavButton;
+
+	public Page() {
+	}
 }

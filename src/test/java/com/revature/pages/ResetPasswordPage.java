@@ -9,8 +9,7 @@ public class ResetPasswordPage extends Page {
 
     public WebDriver driver;
 
-    public RegisterPage(WebDriver driver){
-
+    public ResetPasswordPage(WebDriver driver){
         this.driver = driver;
         super(driver);
         PageFactory.initElements(driver, this);
