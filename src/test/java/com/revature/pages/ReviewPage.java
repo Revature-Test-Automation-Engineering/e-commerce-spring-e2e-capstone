@@ -29,7 +29,7 @@ public class ReviewPage {
     @FindBy(xpath="//h4[contains(text(), 'Leave a Review')]")
     public WebElement leaveAReviewHeaderText;
 
-    @FindBy(xpath="//input[@id='rating']/..")
+    @FindBy(xpath="//input[@name='rating']/..")
     public WebElement starReviewContainer; // contains all radio buttons for product star rating
 
     @FindBy(xpath = "//textarea[@id='outlined-multiline-flexible']")
