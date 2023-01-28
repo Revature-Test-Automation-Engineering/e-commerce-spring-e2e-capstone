@@ -7,11 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class AdminProducts {
+public class AdminProducts extends Page {
 
     public WebDriver driver;
 
     public  AdminProducts(WebDriver driver){
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
