@@ -27,7 +27,7 @@ public class LoginPage extends Page {
     public WebElement signInButton;
 
     // sign up link
-    @FindBy(xpath = "//a")
+    @FindBy(xpath = "//a[contains(text(), 'Sign Up')]")
     public WebElement signUpLink;
 
     // reset password link
