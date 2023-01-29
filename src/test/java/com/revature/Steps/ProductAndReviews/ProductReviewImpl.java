@@ -4,13 +4,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static com.revature.runners.ProductAndReviewRunner.driver;
+
 public class ProductReviewImpl {
 
 
     @Given("User logged into the home page")
     public void user_logged_into_the_home_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        driver.get("http://localhost:3000");
+
     }
     @When("User put product name in the input box")
     public void user_put_product_name_in_the_input_box(String docString) {
@@ -76,5 +78,17 @@ public class ProductReviewImpl {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
+    @When("User clicks X button to close the product review page")
+    public void user_clicks_x_button_to_close_the_product_review_page() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("User is in the home page")
+    public void user_is_in_the_home_page() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
 
 }
