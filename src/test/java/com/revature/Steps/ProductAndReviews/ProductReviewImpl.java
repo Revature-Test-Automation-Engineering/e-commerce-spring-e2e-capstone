@@ -1,28 +1,42 @@
 package com.revature.Steps.ProductAndReviews;
 
+import com.revature.runners.ProductAndReviewRunnerTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
-import static com.revature.runners.ProductAndReviewRunner.driver;
+import static com.revature.helperfunctions.HelperFunctions.standardWait;
+import static com.revature.runners.ProductAndReviewRunnerTest.*;
 
 public class ProductReviewImpl {
 
+    public WebDriver driver = ProductAndReviewRunnerTest.driver;
 
     @Given("User logged into the home page")
     public void user_logged_into_the_home_page() {
-        driver.get("http://localhost:3000");
-
+        driver.get("http://localhost:3000/login");
+        standardWait(driver, loginPage.emailField);
+        loginPage.emailField.sendKeys("mickeymouse@example.com");
+        loginPage.passwordField.sendKeys("pass123");
+        loginPage.signInButton.click();
     }
     @When("User put product name in the input box")
     public void user_put_product_name_in_the_input_box(String docString) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        standardWait(driver, mainPage.searchBarInput);
+        mainPage.searchBarInput.sendKeys("Shrek Crocs");
+        mainPage.searchBarSearchButton.click();
     }
     @When("User clicks product review plus search button")
-    public void user_clicks_product_review_plus_search_button() {
+    public void user_clicks_product_review_plus_search_button() throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        standardWait(driver, mainPage.firstProductOnPage);
+        Actions hover = new Actions(driver);
+        hover.moveToElement(mainPage.firstProductOnPage).perform();
+        Thread.sleep(6000);
+        //hover over order
+        //click element
     }
     @Then("User is on the product review page")
     public void user_is_on_the_product_review_page() {
