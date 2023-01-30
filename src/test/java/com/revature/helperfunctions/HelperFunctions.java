@@ -1,6 +1,7 @@
 package com.revature.helperfunctions;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,11 @@ import java.util.*;
 
 public class HelperFunctions {
 
+    public static void standardWait(WebDriver driver, WebElement elem) {
+        new FluentWait<WebDriver>(driver).withTimeout(Duration.ofMillis(15000))
+                .ignoring(NoSuchElementException.class).ignoring(StaleElementReferenceException.class)
+                .until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(elem)));
+    }
 
     public static Map<String, String> returnProductButtonValues(WebElement productButton){
         Map<String, String> m = new HashMap<>();
