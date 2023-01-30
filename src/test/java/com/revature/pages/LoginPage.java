@@ -26,6 +26,7 @@ public class LoginPage extends Page {
     @FindBy(xpath = "//button")
     public WebElement signInButton;
 
+
     // sign up link
     @FindBy(xpath = "//a[contains(text(), 'Sign Up')]")
     public WebElement signUpLink;
@@ -33,4 +34,10 @@ public class LoginPage extends Page {
     // reset password link
     @FindBy(xpath = "//a[text() = 'Reset your password']")
     public WebElement resetPasswordLink;
+
+    @FindBy(xpath = "//button[contains(text(), 'Sign In')]")
+    public WebElement signInBtn;
+
+    @FindBy(xpath = "//div[contains(text(),' your account has been deactivated!')]")
+    public WebElement loginFailMsg;
 }
