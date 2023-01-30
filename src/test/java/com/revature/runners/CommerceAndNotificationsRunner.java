@@ -32,8 +32,6 @@ public class CommerceAndNotificationsRunner {
     public static OrdersPage ordersPage;
 
 
-
-
     @BeforeClass
     public static void setup() {
         WebDriverManager.chromedriver().setup();
