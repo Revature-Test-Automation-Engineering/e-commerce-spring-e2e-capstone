@@ -1,6 +1,6 @@
 package com.revature.Steps.ProductAndReviews;
 
-import com.revature.Runners.TestRunner;
+import com.revature.runners.CommerceAndNotificationsRunner;
 import com.revature.pages.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
