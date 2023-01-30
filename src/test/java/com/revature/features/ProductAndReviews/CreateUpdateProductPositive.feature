@@ -9,11 +9,11 @@ Feature: Create/Update Product Page - Positive
     When Admin types an image URL "<URL>"
     When Admin types a price "<price>"
     Then Admin clicks the Create Product button
-    Then Admin will be on the product update page with the correct info displayed
+    Then Admin will be on the product update page with the correct info displayed "<name>" "<description>" "<URL>" "<price>"
 
     Examples:
-      |     name      |                 description                 |                  URL                   | price |
-      | Smart Watch   | This is the newest smart watch on the market! |  https://pixabay.com/images/id-889639/ | 700 |
+      |     name      |                 description                 |                  URL                                                        | price |
+      | Smart Watch   | This is the newest smart watch on the market! |  https://cdn.pixabay.com/photo/2015/08/15/15/21/smart-watch-889639_1280.jpg | 700 |
 
 
   Scenario Outline: Admin updates a product field
@@ -22,7 +22,7 @@ Feature: Create/Update Product Page - Positive
     When Admin clicks on an existing product
     When Admin types a new description "<description>"
     Then Admin clicks the update button
-    Then Admin will be on the product update page with the correct info displayed
+    Then Admin will be on the product update page where the correct field has been updated "<description>"
 
     Examples:
       |             description            |
