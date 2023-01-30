@@ -24,7 +24,7 @@ public class MainPage extends Page
     @FindBy(xpath = "/html/body/div/div[2]/div/div/input")
     public WebElement searchBar;
 
-    @FindBy(xpath = "/html/body/div/div[2]/div/button[2]/svg")
+    @FindBy(xpath = "//div/div[2]/div/button[2]/svg")
     public WebElement clearButton;
 
     @FindBy(xpath="//button[@aria-label='search']")
@@ -48,5 +48,4 @@ public class MainPage extends Page
     @FindBy(xpath="//div[@role='dialog']//h2")
     public WebElement modalProductName;
     //END MARK ADDED ELEMENTS
-
 }

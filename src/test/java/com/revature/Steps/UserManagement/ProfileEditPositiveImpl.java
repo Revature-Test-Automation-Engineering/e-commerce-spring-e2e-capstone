@@ -4,29 +4,34 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LoginPositiveImpl {
-    @Given("the user or admin is on the login page")
-    public void the_user_or_admin_is_on_the_login_page() {
+public class ProfileEditPositiveImpl {
+    @Given("User logged into the home page")
+    public void user_logged_into_the_home_page() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @When("the user or admin types the email {string} into the username")
-    public void the_user_or_admin_types_the_email_into_the_username(String string) {
+    @When("User clicks profile button")
+    public void user_clicks_profile_button() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @When("the user or admin types the password {string} into the password input")
-    public void the_user_or_admin_types_the_password_into_the_password_input(String string) {
+    @Then("User welcome to his dashboard")
+    public void user_welcome_to_his_dashboard() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @When("the user or admin clicks on the Sign In button")
-    public void the_user_or_admin_clicks_on_the_sign_in_button() {
+    @When("User puts his new {string} in the input field")
+    public void user_puts_his_new_in_the_input_field(String string) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @Then("the user or admin should be on the home page")
-    public void the_user_or_admin_should_be_on_the_home_page() {
+    @When("User clicks update button")
+    public void user_clicks_update_button() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("User gets message You've successfully updated your profile")
+    public void user_gets_message_you_ve_successfully_updated_your_profile() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
