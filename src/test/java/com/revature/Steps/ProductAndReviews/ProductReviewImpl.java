@@ -1,108 +1,123 @@
 package com.revature.Steps.ProductAndReviews;
 
+import com.revature.pages.LoginPage;
+import com.revature.pages.MainPage;
+import com.revature.pages.ReviewPage;
 import com.revature.runners.ProductAndReviewRunnerTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static com.revature.helperfunctions.HelperFunctions.standardWait;
+//standardWait(driver, loginPage.emailField);
 import static com.revature.runners.ProductAndReviewRunnerTest.*;
+import static java.lang.Integer.parseInt;
 
-public class ProductReviewImpl {
+public class ProductReviewImpl
+{
 
     public WebDriver driver = ProductAndReviewRunnerTest.driver;
+    LoginPage login = new LoginPage(driver);
+    MainPage main = new MainPage(driver);
+    ReviewPage review = new ReviewPage(driver);
 
-    @Given("User logged into the home page")
-    public void user_logged_into_the_home_page() {
+    @Given("User logged in with username {string}  and password {string}")
+    public void user_logged_in_with_username_and_password(String username, String password)
+    {
         driver.get("http://localhost:3000/login");
-        standardWait(driver, loginPage.emailField);
-        loginPage.emailField.sendKeys("mickeymouse@example.com");
-        loginPage.passwordField.sendKeys("pass123");
-        loginPage.signInButton.click();
+        login.emailField.sendKeys(username);
+        login.passwordField.sendKeys(password);
+        login.signInButton.click();
     }
-    @When("User put product name in the input box")
-    public void user_put_product_name_in_the_input_box(String docString) {
-        standardWait(driver, mainPage.searchBarInput);
-        mainPage.searchBarInput.sendKeys("Shrek Crocs");
-        mainPage.searchBarSearchButton.click();
+    @When("User types product name in the search box")
+    public void user_types_product_name_in_the_search_box()
+    {
+        standardWait(driver, main.searchBarInput);
+        main.searchBarInput.sendKeys("Shrek Crocs");
+        main.searchBarSearchButton.click();
     }
-    @When("User clicks product review plus search button")
-    public void user_clicks_product_review_plus_search_button() throws InterruptedException {
-        // Write code here that turns the phrase above into concrete actions
-        standardWait(driver, mainPage.firstProductOnPage);
+    @When("User clicks the appropriate product")
+    public void user_clicks_the_appropriate_product()
+    {
+//        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated
+//                (By.xpath("//*[@id='root']/div[3]/div/div/div[1]/div[2]/div")));
+        WebElement magGlass = driver.findElement
+                (By.xpath("//*[@id='root']/div[3]/div/div/div[1]/div[2]/div"));
         Actions hover = new Actions(driver);
         hover.moveToElement(mainPage.firstProductOnPage).perform();
-        Thread.sleep(6000);
-        //hover over order
-        //click element
+        hover.moveToElement(magGlass).click().perform();
     }
     @Then("User is on the product review page")
-    public void user_is_on_the_product_review_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_is_on_the_product_review_page()
+    {
+        String checkReviewPage = driver.findElement
+                (By.xpath("//*[@id='customized-dialog-title']")).getText();
+        Assert.assertEquals("Shrek Crocs", checkReviewPage);
     }
     @When("User clicks page enlarge arrow mark")
-    public void user_clicks_page_enlarge_arrow_mark() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_clicks_page_enlarge_arrow_mark()
+    {
+        WebElement enlarge = driver.findElement
+                (By.xpath("//*[@id='customized-dialog-title']/button[1]"));
+        enlarge.click();
     }
     @Then("Page maximizes its size")
-    public void page_maximizes_its_size() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void page_maximizes_its_size()
+    {
+        // Nothing to do here, could check that the pop-up(?) has filled the browser screen
     }
-
-    @When("User clicks on stars for his rating")
-    public void user_clicks_on_stars_for_his_rating() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("User clicks {string} stars for their rating")
+    public void user_clicks_stars_for_their_rating(String rating)
+    {
+        //executor works better than actions here because the overlay is permanent
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", review.starRating.get(parseInt(rating)-1));
     }
-    @When("User inputs comments in the product review box")
-    public void user_inputs_comments_in_the_product_review_box(String docString) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("User inputs comment in the product review box {string}")
+    public void user_inputs_comment_in_the_product_review_box(String string)
+    {
+        review.reviewTextBox.sendKeys(string);
     }
     @When("User clicks submit review button")
-    public void user_clicks_submit_review_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_clicks_submit_review_button()
+    {
+        review.submitReviewButton.click();
     }
-    @Then("User can see his ratings and comments")
-    public void user_can_see_his_ratings_and_comments() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("User should be able to see their rating and comment below the input field {string}")
+    public void user_should_be_able_to_see_their_rating_and_comment_below_the_input_field(String comment)
+    {
+        //maximized
+        /*new WebDriverWait(driver, Duration.ofSeconds(35));
+          WebElement topReviewComment = driver.findElement
+                  (By.xpath("//*[@id='root']/div[2]/div[3]/div[3]/div/div/div[1]/div/p[3]"));
+          String topCommentText = topReviewComment.getText();
+         Assert.assertEquals(comment, topCommentText);*/
+        //Checking to make sure that the comment was created and the number of reviews should be three now
+        Assert.assertEquals(3, review.reviewsAllTexts.size());
     }
-
-    @Then("User should get a message that you can't rate a product that you didn't purchase")
-    public void user_should_get_a_message_that_you_can_t_rate_a_product_that_you_didn_t_purchase() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("User should be able to see their rating and comment below {string}")
+    public void user_should_be_able_to_see_their_rating_and_comment_below(String comment)
+    {
+        //minimized
+        //Checking to make sure that the comment was created and the number of reviews should be three now
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated
+                (By.xpath("/html/body/div[2]/div[3]/div/div[6]/div/div/div[1]/div/div/button")));
+        Assert.assertEquals(3, review.reviewsAllTexts.size());
     }
-
-    @When("User inputs {string} in the product review box")
-    public void user_inputs_in_the_product_review_box(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("User will not be able to see their review")
+    public void user_will_not_be_able_to_see_their_review()
+    {
+        //The number of reviews for this product should be three now
+        Assert.assertEquals(review.reviewsAllTexts.size()+1, review.reviewsAllTexts.size());
     }
-
-    @Then("User should get appropriate message for the product review box")
-    public void user_should_get_appropriate_message_for_the_product_review_box() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @When("User clicks X button to close the product review page")
-    public void user_clicks_x_button_to_close_the_product_review_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("User is in the home page")
-    public void user_is_in_the_home_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-
 }
