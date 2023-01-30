@@ -24,8 +24,8 @@ public class DisplayProductsImpl {
     @Given("the guest is on the guest page")
 
     public void the_guest_is_on_the_home_page() {
-        driver.get("http://localhost:3000/");
-        driver.manage().window().setSize(new Dimension(450,440));
+        driver.get("http://localhost:3000");
+        driver.manage().window().setSize(new Dimension(440,450));
         assertTrue(mainPage.searchBarInput.isDisplayed());
     }
     @Then("the guest can see a list of products")
