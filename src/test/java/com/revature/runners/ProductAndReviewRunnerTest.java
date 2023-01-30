@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/com/revature/features/ProductAndReviews", glue="Steps.ProductAndReviews")
+@CucumberOptions(features = "src/test/java/com/revature/features/CommerceAndNotifications", glue="Steps.CommerceAndNotifications")
 public class ProductAndReviewRunnerTest {
 
     public static WebDriver driver;

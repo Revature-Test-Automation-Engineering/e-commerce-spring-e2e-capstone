@@ -11,11 +11,6 @@ public class Notifications_NegativeImpl {
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("The user clicks the place order button")
-    public void the_user_clicks_the_place_order_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 
     @Then("The user will not receive a notification about the transaction")
     public void the_user_will_not_receive_a_notification_about_the_transaction() {
