@@ -6,14 +6,13 @@
 	<groupId>com.revature</groupId>
 	<artifactId>e-commerce</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+    </properties>
 
-	<name>e-commerce</name>
+    <name>e-commerce</name>
 	<description>Demo project for Spring Boot</description>
-
-	<properties>
-		<maven.compiler.source>19</maven.compiler.source>
-		<maven.compiler.target>19</maven.compiler.target>
-	</properties>
 
 	<dependencies>
 

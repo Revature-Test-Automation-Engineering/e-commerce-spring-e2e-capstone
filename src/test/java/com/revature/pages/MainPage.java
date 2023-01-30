@@ -21,6 +21,12 @@ public class MainPage extends Page
     @FindBy(xpath = "//button[@aria-label='clear']")
     public WebElement searchBarClearButton;
 
+    @FindBy(xpath = "/html/body/div/div[2]/div/div/input")
+    public WebElement searchBar;
+
+    @FindBy(xpath = "/html/body/div/div[2]/div/button[2]/svg")
+    public WebElement clearButton;
+
     @FindBy(xpath="//button[@aria-label='search']")
     public WebElement searchBarSearchButton;
 
@@ -35,5 +41,12 @@ public class MainPage extends Page
 
     @FindBy(xpath="//div[@class='sc-ezWOiH jOHTZQ']")
     public WebElement firstProductOnPage;
+
+    @FindBy(xpath="//div[@aria-label='view-product-details']")
+    public WebElement firstProductPlusSignMagnifyingGlassButton;
+
+    @FindBy(xpath="//div[@role='dialog']//h2")
+    public WebElement modalProductName;
+    //END MARK ADDED ELEMENTS
 
 }

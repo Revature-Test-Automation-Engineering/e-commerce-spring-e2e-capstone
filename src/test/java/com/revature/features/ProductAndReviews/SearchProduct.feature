@@ -23,6 +23,7 @@ Feature: User searching for the products
       | Tomato       |
       | @@@@###      |
       | Olive Oil    |
+
   Scenario Outline: Search product inputs clear
     When User put "<product name>" in the input box
     When User clicks X button
