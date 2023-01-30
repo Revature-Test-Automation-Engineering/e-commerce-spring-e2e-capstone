@@ -18,25 +18,25 @@ public class ProductPage extends Page
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "/html/body/div/div[2]/div[3]/div[1]/div[1]/button")
+	@FindBy(xpath = "//div/div[2]/div[3]/div[1]/div[1]/button")
 	public WebElement removeItemButton;
 
-	@FindBy(xpath = "/html/body/div/div[2]/div[3]/div[1]/div[2]/p")
+	@FindBy(xpath = "//div/div[2]/div[3]/div[1]/div[2]/p")
 	public WebElement itemQuantity;
 
-	@FindBy(xpath = "/html/body/div/div[2]/div[3]/div[1]/div[3]/button")
+	@FindBy(xpath = "//div/div[2]/div[3]/div[1]/div[3]/button")
 	public WebElement addItemButton;
 
-	@FindBy(xpath = "/html/body/div/div[2]/div[3]/div[1]/div[5]/h5")
+	@FindBy(xpath = "//div/div[2]/div[3]/div[1]/div[5]/h5")
 	public WebElement price;
 
-	@FindBy(xpath = "/html/body/div/div[2]/div[3]/div[2]/div[1]/div/textarea[1]")
+	@FindBy(xpath = "//div/div[2]/div[3]/div[2]/div[1]/div/textarea[1]")
 	public WebElement reviewInput;
 
-	@FindBy(xpath = "/html/body/div/div[2]/div[3]/div[2]/div[2]/button")
+	@FindBy(xpath = "//div/div[2]/div[3]/div[2]/div[2]/button")
 	public WebElement submitReviewButton;
 
-	@FindBy(xpath = "/html/body/div/div[2]/div[3]/div[3]/div/div/div/div/p[3]")
+	@FindBy(xpath = "//div/div[2]/div[3]/div[3]/div/div/div/div/p[3]")
 	public List<WebElement> reviewBodies;
 
 	@FindBy(xpath = "/html/body/div/div[2]/div[3]/div[3]/div/div/div/div/div/button")

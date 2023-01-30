@@ -14,20 +14,20 @@ public class ProductReviewImpl {
 
     public WebDriver driver = ProductAndReviewRunnerTest.driver;
 
-    @Given("User logged into the home page")
-    public void user_logged_into_the_home_page() {
-        driver.get("http://localhost:3000/login");
-        standardWait(driver, loginPage.emailField);
-        loginPage.emailField.sendKeys("mickeymouse@example.com");
-        loginPage.passwordField.sendKeys("pass123");
-        loginPage.signInButton.click();
-    }
-    @When("User put product name in the input box")
-    public void user_put_product_name_in_the_input_box(String docString) {
-        standardWait(driver, mainPage.searchBarInput);
-        mainPage.searchBarInput.sendKeys("Shrek Crocs");
-        mainPage.searchBarSearchButton.click();
-    }
+//    @Given("User logged into the home page")
+//    public void user_logged_into_the_home_page() {
+//        driver.get("http://localhost:3000/login");
+//        standardWait(driver, loginPage.emailField);
+//        loginPage.emailField.sendKeys("mickeymouse@example.com");
+//        loginPage.passwordField.sendKeys("pass123");
+//        loginPage.signInButton.click();
+//    }
+//    @When("User put product name in the input box")
+//    public void user_put_product_name_in_the_input_box(String docString) {
+//        standardWait(driver, mainPage.searchBarInput);
+//        mainPage.searchBarInput.sendKeys("Shrek Crocs");
+//        mainPage.searchBarSearchButton.click();
+//    }
     @When("User clicks product review plus search button")
     public void user_clicks_product_review_plus_search_button() throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
@@ -98,11 +98,7 @@ public class ProductReviewImpl {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @Then("User is in the home page")
-    public void user_is_in_the_home_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
 
 
 }

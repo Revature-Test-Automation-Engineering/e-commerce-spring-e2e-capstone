@@ -13,13 +13,15 @@ public class LoginPage extends Page {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
+    // clicks login button in guest page
+    @FindBy(xpath = "//*[@id=\"root\"]//div[2]/div[2]/strong")
+    public WebElement signIn;
     // email address input field
-    @FindBy(xpath = "(//input)[2]")
+    @FindBy(id = "email")
     public WebElement emailField;
 
     // password input field
-    @FindBy(xpath = "(//input)[3]")
+    @FindBy(id = "password")
     public WebElement passwordField;
 
     // sign in button
@@ -33,4 +35,8 @@ public class LoginPage extends Page {
     // reset password link
     @FindBy(xpath = "//a[text() = 'Reset your password']")
     public WebElement resetPasswordLink;
+
+    //Sign in page verification
+    @FindBy(xpath = "//*[@id=\"root\"]/main/div/h1")
+    public WebElement signInHeader;
 }
