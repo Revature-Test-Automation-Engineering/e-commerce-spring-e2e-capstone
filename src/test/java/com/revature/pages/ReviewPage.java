@@ -67,15 +67,14 @@ public class ReviewPage extends Page {
     @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/..//button[contains(text(), 'Delete')]")
     public List<WebElement> reviewDeleteButton;
 
-    //do we want a map to associate these details to the other elements in the review form?
-    @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/../div/div/div/p[1]")
+    //MARKC - Changed xpaths to be more concise
+    @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/..//p[1]")
     public List<WebElement> reviewsAllReviewerNames;
 
-    @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/../div/div/div/p[2]/span")
+    @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/..//p[2]/span")
     public List<WebElement> reviewsAllStarRatings;
 
-    @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/../div/div/div/p[3]")
+    @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/..//p[3]")
     public List<WebElement> reviewsAllTexts;
-    //
-
+    //MARK END Changes to element xpaths
 }

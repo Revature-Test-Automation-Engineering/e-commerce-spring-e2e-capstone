@@ -1,5 +1,6 @@
 Feature: Create/Update Product Page - Negative
 
+
   Scenario: Admin creates a new product with no name
     Given The admin is logged in
     When Admin clicks the Edit Product button
@@ -8,6 +9,7 @@ Feature: Create/Update Product Page - Negative
     When Admin types a price
     Then Admin clicks the Create Product button
     Then The Admin will be given an alert saying the required fields must be filled in
+
 
   Scenario: Admin creates a new product with no description
     Given The admin is logged in
@@ -18,6 +20,7 @@ Feature: Create/Update Product Page - Negative
     Then Admin clicks the Create Product button
     Then The Admin will be given an alert saying the required fields must be filled in
 
+
   Scenario: Admin creates a new product with no price
     Given The admin is logged in
     When Admin clicks the Edit Product button
@@ -26,6 +29,7 @@ Feature: Create/Update Product Page - Negative
     When Admin types a description
     Then Admin clicks the Create Product button
     Then The Admin will be given an alert saying the required fields must be filled in
+
 
   Scenario: Admin updates a product field to blank
     Given The admin is logged in

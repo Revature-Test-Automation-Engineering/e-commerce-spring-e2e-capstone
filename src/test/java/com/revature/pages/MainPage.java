@@ -24,10 +24,7 @@ public class MainPage extends Page
     @FindBy(xpath = "/html/body/div/div[2]/div/button[2]/svg")
     public WebElement clearButton;
 
-    //MY EDITS
-    @FindBy(xpath = "//button[@aria-label='clear']")
-    public WebElement searchBarClearButton;
-
+    //MARKC Added elements used in step implementations
     @FindBy(xpath="//button[@aria-label='search']")
     public WebElement searchBarSearchButton;
 
@@ -39,5 +36,12 @@ public class MainPage extends Page
 
     @FindBy(xpath="//div[@class='sc-ezWOiH jOHTZQ']")
     public WebElement firstProductOnPage;
+
+    @FindBy(xpath="//div[@aria-label='view-product-details']")
+    public WebElement firstProductPlusSignMagnifyingGlassButton;
+
+    @FindBy(xpath="//div[@role='dialog']//h2")
+    public WebElement modalProductName;
+    //END MARK ADDED ELEMENTS
 
 }

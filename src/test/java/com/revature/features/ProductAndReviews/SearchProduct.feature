@@ -3,6 +3,7 @@ Feature: User searching for the products
   Background:
     Given User logged into the home page
 
+
   Scenario: Search products available
     When User put product name in the input box
     """
@@ -22,6 +23,8 @@ Feature: User searching for the products
     | Tomato       |
     | @@@@###      |
     |              |
+
+
   Scenario Outline: Search product inputs clear
     When User put "<product name>" in the input box
     When User clicks X button

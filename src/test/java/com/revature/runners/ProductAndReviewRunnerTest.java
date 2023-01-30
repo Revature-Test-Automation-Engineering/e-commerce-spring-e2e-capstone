@@ -11,23 +11,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/com/revature/features/ProductAndReviews", glue="Steps.ProductAndReviews")
+@CucumberOptions(features = "src/test/java/com/revature/features/ProductAndReviews", glue="com.revature.Steps.ProductAndReviews", tags = ("not @ignore"))
 public class ProductAndReviewRunnerTest {
 
     public static WebDriver driver;
     public static LoginPage loginPage;
     public static AdminProducts adminProductsPage;
+    public static AdminIndividualProduct adminIndividualProductPage;
     public static CreateANewProductPage createANewProductPage;
-    public static ProductPage productPage; // presumably what is called product update page in feature file
+    public static ProductPage productPage;
     public static MainPage mainPage;
 
     @BeforeClass
     public static void setup(){
-        //WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\markc\\OneDrive\\Desktop\\Project3Repo\\BackEnd-e2e\\e-commerce-spring-e2e-capstone\\src\\main\\resources\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
         adminProductsPage = new AdminProducts(driver);
+        adminIndividualProductPage = new AdminIndividualProduct(driver);
         createANewProductPage = new CreateANewProductPage(driver);
         productPage = new ProductPage(driver);
         mainPage = new MainPage(driver);
