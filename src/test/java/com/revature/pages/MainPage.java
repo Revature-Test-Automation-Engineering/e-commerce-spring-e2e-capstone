@@ -18,10 +18,13 @@ public class MainPage extends Page
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "/html/body/div/div[2]/div/div/input")
+    @FindBy(className = "congoLogo")
+    public WebElement congo;
+
+    @FindBy(xpath = "//div/div[2]/div/div/input")
     public WebElement searchBar;
 
-    @FindBy(xpath = "/html/body/div/div[2]/div/button[2]/svg")
+    @FindBy(xpath = "//div/div[2]/div/button[2]/svg")
     public WebElement clearButton;
 
     //MY EDITS
@@ -40,4 +43,7 @@ public class MainPage extends Page
     @FindBy(xpath="//div[@class='sc-ezWOiH jOHTZQ']")
     public WebElement firstProductOnPage;
 
+    // logout
+    @FindBy(xpath = "//*[@id=\"root\"]/div[1]//div[2]/li/strong")
+    public WebElement logout;
 }
