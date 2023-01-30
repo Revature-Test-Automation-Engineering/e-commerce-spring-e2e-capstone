@@ -5,11 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class UserProfilePage {
+public class UserProfilePage extends Page {
 
     private WebDriver driver;
 
     public UserProfilePage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -44,7 +45,6 @@ public class UserProfilePage {
     @FindBy(xpath = "/html/body/div/main[2]/div/form/div/div[4]/div[1]/button")
     public WebElement addPayment;
 
-    @FindBy(xpath="//button[text() = 'DELETE']")
+    @FindBy(xpath="//button[contains(text(),'DELETE')][last()]")
     public WebElement deleteButton;
-
 }
