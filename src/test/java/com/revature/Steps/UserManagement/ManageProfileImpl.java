@@ -1,11 +1,17 @@
 package com.revature.Steps.UserManagement;
 
+import com.revature.pages.*;
+import com.revature.runners.UserProfileTestRunner;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 
 public class ManageProfileImpl {
-
+    public static WebDriver driver = UserProfileTestRunner.driver;
+    public LoginPage loginPage = new LoginPage(driver);
+    public MainPage mainPage = new MainPage(driver);
+    public UserProfilePage userProfilePage = new UserProfilePage(driver);
 
     @Given("User is logged in and on their profile page")
     public void user_is_logged_in_and_on_their_profile_page() {
