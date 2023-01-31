@@ -62,4 +62,12 @@ public class CheckoutPage extends Page
 
     @FindBy(xpath = "//h6")
     public WebElement confirmationBody;
+
+    @FindBy(xpath = "//tr//span/span")
+    public WebElement firstStoredCard;
+
+    @FindBy(xpath="//button[contains(text(), 'SUBMIT')]")
+    public WebElement submitPaymentButton;
+
+
 }

@@ -28,16 +28,19 @@ public class MainPage extends Page
     @FindBy(xpath = "//button[@aria-label='clear']")
     public WebElement searchBarClearButton;
 
-    @FindBy(xpath="//button[@aria-label='search']")
+    @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[1]/input[1]")
     public WebElement searchBarSearchButton;
 
     @FindBy(xpath="//input[@aria-label='search products']")
     public WebElement searchBarInput;
 
-    @FindBy(xpath="//div[@class='sc-ezWOiH jOHTZQ']")
-    public List<WebElement> productsOnPage;
+//    @FindBy(xpath="//div[@class='sc-ezWOiH jOHTZQ']")
+//    public List<WebElement> productsOnPage;
 
-    @FindBy(xpath="//div[@class='sc-ezWOiH jOHTZQ']")
-    public WebElement firstProductOnPage;
+//    @FindBy(xpath="//div[@class='sc-ezWOiH jOHTZQ']")
+//    public WebElement firstProductOnPage;
+
+    @FindBy(xpath="//div[@aria-label='view-product-details']/../..//span[@class='MuiBadge-root']")
+    public WebElement firstProductOnPageCartButton;
 
 }

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class UserProfilePage extends Page {
 
     private WebDriver driver;
@@ -47,4 +49,9 @@ public class UserProfilePage extends Page {
 
     @FindBy(xpath="//button[contains(text(),'DELETE')][last()]")
     public WebElement deleteButton;
+
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[2]/div[1]/form[1]/div[1]/div[4]/div[2]/form[1]/div[1]/table[1]/tbody[1]/tr")
+    public List<WebElement> storedPaymentCards;
+
 }

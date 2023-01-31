@@ -141,3 +141,5 @@ public class Checkout_GuestImpl {
         assertEquals("Thank you for your order.", textShopping);
     }
 }
+
+
