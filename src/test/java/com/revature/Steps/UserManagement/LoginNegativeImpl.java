@@ -6,8 +6,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static com.revature.runners.UserManagementRunnerL.driver;
-import static com.revature.runners.UserManagementRunnerL.loginPage;
+import static com.revature.runners.UserManagementRunner.*;
 import static org.junit.Assert.assertTrue;
 
 public class LoginNegativeImpl {

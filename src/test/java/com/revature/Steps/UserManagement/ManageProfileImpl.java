@@ -1,6 +1,7 @@
 package com.revature.Steps.UserManagement;
 
 import com.revature.pages.*;
+import com.revature.runners.UserManagementRunner;
 import com.revature.runners.UserProfileTestRunner;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,7 +22,7 @@ import java.util.Date;
 import java.util.UUID;
 
 public class ManageProfileImpl {
-    public static WebDriver driver = UserProfileTestRunner.driver;
+    public static WebDriver driver = UserManagementRunner.driver;
     public LoginPage loginPage = new LoginPage(driver);
     public MainPage mainPage = new MainPage(driver);
     public UserProfilePage userProfilePage = new UserProfilePage(driver);

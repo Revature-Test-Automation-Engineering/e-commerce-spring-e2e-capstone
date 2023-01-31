@@ -16,10 +16,20 @@ public class UserManagementRunner {
 
     public static WebDriver driver;
 
+    public static LoginPage loginPage;
+
+    public static MainPage mainPage;
+
+    public static RegisterPage registerPage;
+
     @BeforeClass
     public static void setup(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+
+        loginPage = new LoginPage(driver);
+        mainPage = new MainPage(driver);
+        registerPage = new RegisterPage(driver);
     }
 
     @AfterClass

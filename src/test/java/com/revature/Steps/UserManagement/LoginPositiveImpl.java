@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static com.revature.runners.UserManagementRunnerL.*;
+import static com.revature.runners.UserManagementRunner.*;
 import static org.junit.Assert.assertTrue;
 
 public class LoginPositiveImpl {

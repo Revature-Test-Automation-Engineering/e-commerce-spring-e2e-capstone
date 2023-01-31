@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static com.revature.runners.UserManagementRunnerL.*;
+import static com.revature.runners.UserManagementRunner.*;
 import static org.junit.Assert.assertTrue;
 
 public class RegisterPositiveImpl {

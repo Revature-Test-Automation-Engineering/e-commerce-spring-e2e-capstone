@@ -96,18 +96,18 @@ public class ResetPasswordImpl {
         submitButton.click();
 
 
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(20))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='Passwd']")));
         WebElement passwordInput = driver.findElement(By.xpath("//input[@name='Passwd']"));
         passwordInput.sendKeys("pass123!!!");
 
 
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(20))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Next']")));
         submitButton = driver.findElement(By.xpath("//span[text()='Next']"));
         submitButton.click();
 
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(20))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//tbody")));
     }
 
