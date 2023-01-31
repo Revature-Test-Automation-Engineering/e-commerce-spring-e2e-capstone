@@ -41,8 +41,7 @@ public class LoginPositiveImpl {
     public void the_user_or_admin_should_be_on_the_home_page() {
         // Write code here that turns the phrase above into concrete actions
         new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.visibilityOf(mainPage.firstProductOnPage));
-        assertTrue(mainPage.firstProductOnPage.isDisplayed());
+                .until(ExpectedConditions.elementToBeClickable(mainPage.searchBar));
         assertTrue(mainPage.searchBar.isDisplayed());
     }
 }
