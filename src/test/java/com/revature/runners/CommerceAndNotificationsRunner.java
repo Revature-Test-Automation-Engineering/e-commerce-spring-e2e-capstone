@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/java/com/revature/features/CommerceAndNotifications/ViewPreviousOrder.feature",
+@CucumberOptions(features="src/test/java/com/revature/features/CommerceAndNotifications",
                  glue="com.revature.Steps.CommerceAndNotifications")
 
 public class CommerceAndNotificationsRunner {
