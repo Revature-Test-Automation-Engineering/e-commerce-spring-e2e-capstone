@@ -30,7 +30,7 @@ public class ProductDetailViewImpl {
     public void the_user_or_admin_or_guest_clicks_on_the_the_magnifier_icon_of_a_product(){
         standardWait(driver, loginPage.signInButton);
         driver.get("http://localhost:3000");
-        standardWait(driver, mainPage.searchBarInput);
+        standardWait(driver, mainPage.firstProductOnPage);
         if(mainPage.productsOnPage.size() > 0){
             Actions hover = new Actions(driver);
             hover.moveToElement(mainPage.firstProductOnPage).perform();

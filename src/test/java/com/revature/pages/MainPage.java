@@ -39,7 +39,7 @@ public class MainPage extends Page
     @FindBy(xpath="/html/body/div/div[3]/div/div/div[1]/div[1]")
     public List<WebElement> addToCartButtons;
 
-    @FindBy(xpath="//div[@class='sc-ezWOiH jOHTZQ']")
+    @FindBy(xpath="//div/img/..")
     public WebElement firstProductOnPage;
 
     @FindBy(xpath="//div[@aria-label='view-product-details']")

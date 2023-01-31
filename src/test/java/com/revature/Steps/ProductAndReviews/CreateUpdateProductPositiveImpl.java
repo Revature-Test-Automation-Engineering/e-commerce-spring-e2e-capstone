@@ -47,8 +47,10 @@ public class CreateUpdateProductPositiveImpl
     }
 
     @Then("Admin will be on the product update page where the correct field has been updated {string}")
-    public void admin_will_be_on_the_product_update_page_where_the_correct_field_has_been_updated(String string) {
+    public void admin_will_be_on_the_product_update_page_where_the_correct_field_has_been_updated(String string) throws InterruptedException
+    {
         standardWait(driver, adminIndividualProductPage.productDescription);
+        Thread.sleep(5000);
         assertEquals(string, adminIndividualProductPage.productDescription.getText());
     }
 

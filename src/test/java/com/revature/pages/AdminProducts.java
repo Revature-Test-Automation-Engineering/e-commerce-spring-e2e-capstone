@@ -24,7 +24,7 @@ public class AdminProducts extends Page {
     public WebElement createNewProductButton;
 
     //relates to helperfunctions class 'returnProductButtonValues' function which takes a single button and returns a map of all the values inside it
-    @FindBy(xpath="//div[@class='sc-gXmSlM jUbOKS']//img/..")
+    @FindBy(xpath="/html/body/div/div[3]/div/button")
     public List<WebElement> allProductButtons;
 
 }

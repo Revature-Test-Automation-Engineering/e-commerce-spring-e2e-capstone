@@ -1,6 +1,8 @@
 package com.revature.Steps.ProductAndReviews;
 
+import com.revature.helperfunctions.HelperFunctions;
 import com.revature.pages.*;
+import com.revature.runners.ProductAndReviewRunnerTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,25 +21,59 @@ import static org.junit.Assert.fail;
 public class CreateUpdateProductNegativeImpl
 {
     public static String urlToVerify = ""; // for additional state verification, but optional - catch block in which this appears can be cleared and replaced with a generic fail("alert failed to appear");
+    LoginPage loginPage = ProductAndReviewRunnerTest.loginPage;
+    MainPage mainPage = ProductAndReviewRunnerTest.mainPage;
+    AdminProducts adminProductsPage = ProductAndReviewRunnerTest.adminProductsPage;
+    AdminIndividualProduct adminIndividualProductPage = ProductAndReviewRunnerTest.adminIndividualProductPage;
+    CreateANewProductPage createANewProductPage = ProductAndReviewRunnerTest.createANewProductPage;
+    ProductPage productPage = ProductAndReviewRunnerTest.productPage;
 
     @Given("The admin is logged in")
-    public void the_admin_is_logged_in() {
+    public void the_admin_is_logged_in()
+    {
         driver.get("http://localhost:3000/login");
+        standardWait(driver, loginPage.signIn);
+        try
+        {
+            if (mainPage.logoutButton.isDisplayed())
+            {
+                mainPage.logoutButton.click(); //logout if logged in
+            }
+        }
+        catch(NoSuchElementException e)
+        {
+            System.out.println("Not logged in, ok to proceed.");
+        }
+
         standardWait(driver, loginPage.emailField);
+        loginPage.emailField.clear();
+        loginPage.passwordField.clear();
         loginPage.emailField.sendKeys("nameynamenson@example.com");
         loginPage.passwordField.sendKeys("pass123");
         loginPage.signInButton.click();
     }
+
+//    @Given("The admin is logged in")
+//    public void the_admin_is_logged_in() {
+//        driver.get("http://localhost:3000/login");
+//        standardWait(driver, loginPage.emailField);
+//        loginPage.emailField.sendKeys("nameynamenson@example.com");
+//        loginPage.passwordField.sendKeys("pass123");
+//        loginPage.signInButton.click();
+//    }
+
     @When("Admin clicks the Edit Product button")
     public void admin_clicks_the_edit_product_button() {
         standardWait(driver, mainPage.editProduct);
         mainPage.editProduct.click();
     }
+
     @When("Admin clicks Create New Product button")
     public void admin_clicks_create_new_product_button() {
         standardWait(driver, adminProductsPage.createNewProductButton);
         adminProductsPage.createNewProductButton.click();
     }
+
     @When("Admin types a description")
     public void admin_types_a_description() {
         standardWait(driver, createANewProductPage.productName);
