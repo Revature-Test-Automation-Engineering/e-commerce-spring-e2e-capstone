@@ -30,8 +30,8 @@ public class ReviewPage extends Page {
     @FindBy(xpath="//h4[contains(text(), 'Leave a Review')]")
     public WebElement leaveAReviewHeaderText;
 
-    @FindBy(xpath="//input[@name='rating']/..")
-    public WebElement starReviewContainer; // contains all radio buttons for product star rating
+    @FindBy(xpath="//input[@name='rating']")
+    public List <WebElement> starRating; // contains all radio buttons for product star rating
 
     @FindBy(xpath = "//textarea[@id='outlined-multiline-flexible']")
     public WebElement reviewTextBox;
@@ -74,7 +74,7 @@ public class ReviewPage extends Page {
     @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/../div/div/div/p[2]/span")
     public List<WebElement> reviewsAllStarRatings;
 
-    @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/../div/div/div/p[3]")
+    @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/../div/div/div/div/p[3]")
     public List<WebElement> reviewsAllTexts;
     //
 
