@@ -33,7 +33,8 @@ public class Page
 	@FindBy(xpath = "//strong[contains(text(),'LOGOUT')]")
 	public WebElement logout;
 
-	@FindBy(xpath = "/html/body/div/div[1]/div/div[2]/div[4]/span")
+	//Updated cart button
+	@FindBy(xpath = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[3]/span[1]/*[1]")
 	public WebElement cartBtn;
 
 	@FindBy(xpath = "//strong[contains(text(),'REGISTER')]")
