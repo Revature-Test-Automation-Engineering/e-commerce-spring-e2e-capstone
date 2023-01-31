@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static com.revature.helperfunctions.HelperFunctions.standardWait;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -25,7 +26,7 @@ public class DisplayProductsImpl {
 
     public void the_guest_is_on_the_home_page() {
         driver.get("http://localhost:3000");
-        driver.manage().window().setSize(new Dimension(440,450));
+        //driver.manage().window().setSize(new Dimension(440,450));
         assertTrue(mainPage.searchBarInput.isDisplayed());
     }
     @Then("the guest can see a list of products")
@@ -38,9 +39,12 @@ public class DisplayProductsImpl {
         loginPage.signIn.click();
     }
     @When("the user logs in with the email {string} and the password {string}")
-    public void the_user_logs_in_with_the_email_and_the_password(String email, String pwd) {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.visibilityOf(loginPage.emailField));
+    public void the_user_logs_in_with_the_email_and_the_password(String email, String pwd) throws InterruptedException {
+        //new WebDriverWait(driver, Duration.ofSeconds(10))
+                //.until(ExpectedConditions.visibilityOf(loginPage.emailField));
+        standardWait(driver, loginPage.emailField);
+        loginPage.emailField.clear();
+        loginPage.passwordField.clear();
         loginPage.emailField.sendKeys(email);
         loginPage.passwordField.sendKeys(pwd);
         loginPage.signInButton.click();

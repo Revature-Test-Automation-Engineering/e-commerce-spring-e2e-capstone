@@ -16,5 +16,5 @@ Feature: Display Products
 
     Examples:
     | email          |          | password   |
-    | jack@gmail.com |          | Pass1234#  |
-    | hello@gmail.com |         | 987456rM#   |
+    | mickeymouse@example.com | | pass123    |
+    | nameynamenson@example.com || pass123   |

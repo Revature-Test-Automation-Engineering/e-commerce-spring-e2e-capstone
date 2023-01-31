@@ -119,7 +119,7 @@ public class CreateUpdateProductNegativeImpl
     }
     @When("Admin clicks on an existing product")
     public void admin_clicks_on_an_existing_product() {
-        standardWait(driver, adminProductsPage.createNewProductButton);
+         standardWait(driver, adminProductsPage.createNewProductButton);
         if(adminProductsPage.allProductButtons.size() > 0) {
             adminProductsPage.allProductButtons.get(1).click();
         } else {
