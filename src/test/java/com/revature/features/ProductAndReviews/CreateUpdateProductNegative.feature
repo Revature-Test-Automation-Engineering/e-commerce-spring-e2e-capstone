@@ -7,7 +7,7 @@ Feature: Create/Update Product Page - Negative
     When Admin types a description
     When Admin types a price
     Then Admin clicks the Create Product button
-    Then The Admin will be given an error saying the required fields must be filled in
+    Then The Admin will be given an alert saying the required fields must be filled in
 
   Scenario: Admin creates a new product with no description
     Given The admin is logged in
@@ -16,7 +16,7 @@ Feature: Create/Update Product Page - Negative
     When Admin types a name
     When Admin types a price
     Then Admin clicks the Create Product button
-    Then The Admin will be given an error saying the required fields must be filled in
+    Then The Admin will be given an alert saying the required fields must be filled in
 
   Scenario: Admin creates a new product with no price
     Given The admin is logged in
@@ -25,7 +25,7 @@ Feature: Create/Update Product Page - Negative
     When Admin types a name
     When Admin types a description
     Then Admin clicks the Create Product button
-    Then The Admin will be given an error saying the required fields must be filled in
+    Then The Admin will be given an alert saying the required fields must be filled in
 
   Scenario: Admin updates a product field to blank
     Given The admin is logged in
@@ -33,4 +33,4 @@ Feature: Create/Update Product Page - Negative
     When Admin clicks on an existing product
     When Admin deletes the description and leaves it blank
     Then Admin clicks the update button
-    Then The Admin will be given an error saying the required fields must be filled in
+    Then The Admin will be given an alert saying the required fields must be filled in
