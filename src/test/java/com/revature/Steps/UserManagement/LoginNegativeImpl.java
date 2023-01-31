@@ -34,7 +34,8 @@ public class LoginNegativeImpl {
         // Write code here that turns the phrase above into concrete actions
         Thread.sleep(1500);
         WebElement failedMsg = driver.findElement(By.xpath("//div[contains(@class, 'MuiSnackbar-root')]/div/div[2]"));
-        assertTrue(failedMsg.isDisplayed());
+        //assertTrue(failedMsg.isDisplayed());
+        assertTrue(failedMsg.getText().contains("Login was unsuccessful because your account has been deactivated!"));
     }
 
 
