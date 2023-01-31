@@ -1,6 +1,7 @@
 package com.revature.Steps.ProductAndReviews;
 
 import com.revature.pages.MainPage;
+import com.revature.pages.Page;
 import com.revature.runners.ProductAndReviewRunnerTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,6 +22,7 @@ public class DisplayProductsImpl {
     public WebDriver driver = ProductAndReviewRunnerTest.driver;
     public LoginPage loginPage = ProductAndReviewRunnerTest.loginPage;
     public MainPage mainPage = ProductAndReviewRunnerTest.mainPage;
+    public Page page = ProductAndReviewRunnerTest.page;
 
     @Given("the guest is on the guest page")
 
@@ -35,14 +37,13 @@ public class DisplayProductsImpl {
         assertTrue(mainPage.productsOnPage.size()>0);
     }
     @When("user clicks sign in button")
-    public void user_clicks_login_button(){
+    public void user_clicks_login_button() {
         loginPage.signIn.click();
     }
     @When("the user logs in with the email {string} and the password {string}")
-    public void the_user_logs_in_with_the_email_and_the_password(String email, String pwd) throws InterruptedException {
-        //new WebDriverWait(driver, Duration.ofSeconds(10))
-                //.until(ExpectedConditions.visibilityOf(loginPage.emailField));
-        standardWait(driver, loginPage.emailField);
+    public void the_user_logs_in_with_the_email_and_the_password(String email, String pwd) {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.elementToBeClickable(loginPage.emailField));
         loginPage.emailField.clear();
         loginPage.passwordField.clear();
         loginPage.emailField.sendKeys(email);

@@ -44,6 +44,7 @@ public class CreateUpdateProductPositiveImpl
         if(!price.substring(0,price.indexOf(".")).equals(string4)){
             fail("wrong price");
         }
+        adminIndividualProductPage.logoutButton.click();
     }
 
     @Then("Admin will be on the product update page where the correct field has been updated {string}")
@@ -52,6 +53,8 @@ public class CreateUpdateProductPositiveImpl
         standardWait(driver, adminIndividualProductPage.productDescription);
         Thread.sleep(5000);
         assertEquals(string, adminIndividualProductPage.productDescription.getText());
+        adminIndividualProductPage.logoutButton.click();
+        Thread.sleep(2000);
     }
 
     @When("Admin types a new description {string}")
