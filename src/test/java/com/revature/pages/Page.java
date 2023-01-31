@@ -38,4 +38,8 @@ public class Page
 
 	@FindBy(xpath = "//strong[contains(text(),'REGISTER')]")
 	public WebElement register;
+
+	@FindBy(xpath = "//strong[contains(text(),'SIGN IN')]")
+	public WebElement signIn;
+
 }

@@ -14,6 +14,4 @@ Feature: Guest Checkout
     When the guest clicks the place order button
     Then the page gives a message of success for placing order
 
-
-
     # Fail: no way for a guest to add payment method
