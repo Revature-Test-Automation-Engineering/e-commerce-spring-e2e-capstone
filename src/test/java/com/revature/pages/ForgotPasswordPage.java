@@ -30,6 +30,6 @@ public class ForgotPasswordPage extends Page{
     @FindBy(xpath="//a[@href='login' and contains(text(), 'Return to Login')]")
     public WebElement returnToLoginLink;
 
-
-
+    @FindBy(xpath="//main//p")
+    public WebElement infoParagraph;
 }

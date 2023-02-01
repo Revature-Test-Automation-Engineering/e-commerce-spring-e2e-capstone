@@ -28,6 +28,7 @@ public class LoginPage extends Page {
     @FindBy(xpath = "//button")
     public WebElement signInButton;
 
+
     // sign up link
     @FindBy(xpath = "//a[contains(text(), 'Sign Up')]")
     public WebElement signUpLink;
@@ -39,4 +40,9 @@ public class LoginPage extends Page {
     //Sign in page verification
     @FindBy(xpath = "//*[@id=\"root\"]/main/div/h1")
     public WebElement signInHeader;
+    @FindBy(xpath = "//button[contains(text(), 'Sign In')]")
+    public WebElement signInBtn;
+
+    @FindBy(xpath = "//div[contains(text(),' your account has been deactivated!')]")
+    public WebElement loginFailMsg;
 }
