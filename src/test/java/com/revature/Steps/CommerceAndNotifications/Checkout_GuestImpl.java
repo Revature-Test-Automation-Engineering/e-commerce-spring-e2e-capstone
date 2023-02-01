@@ -2,7 +2,8 @@ package com.revature.Steps.CommerceAndNotifications;
 
 import com.revature.pages.CartPage;
 import com.revature.pages.MainPage;
-import com.revature.runners.TestRunner;
+import com.revature.pages.Page;
+import com.revature.runners.CommerceAndNotificationsRunnerTest;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,11 +20,12 @@ import java.time.Duration;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-//import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Checkout_GuestImpl {
 
-    private WebDriver driver = TestRunner.driver;
+    private WebDriver driver = CommerceAndNotificationsRunnerTest.driver;
+
+    public Page page = new Page(driver);
     MainPage mainPage = new MainPage(driver);
 
     CartPage cartPage = new CartPage(driver);
@@ -40,6 +42,11 @@ public class Checkout_GuestImpl {
         driver.get("http://localhost:3000/");
         WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div/div[1]/div/div[2]/div[2]/strong")));
+
+        page.logout.click();
+
+        page.mainPageBtn.click();
+
     }
 
     @Given("the guest is on the homepage")
@@ -111,12 +118,14 @@ public class Checkout_GuestImpl {
     }
 
     @Then("the guest selects payment method")
-    public void theGuestSelectsPaymentMethod() {
+    public void theGuestSelectsPaymentMethod() throws InterruptedException {
+        Thread.sleep(1000);
+
         try {
             new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions
                     .elementToBeClickable(driver.findElement(By.xpath("//body/div[@id='root']/main[1]/div[1]/form[1]/div[1]/div[1]/table[1]/tr[1]/label[1]/span[1]/span[1]"))));
         } catch (NoSuchElementException e) {
-            fail();
+            fail("No Such Element Exception.");
         }
     }
 
