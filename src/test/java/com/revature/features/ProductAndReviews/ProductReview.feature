@@ -46,5 +46,3 @@ Feature: Product Review
       |       username        |password|rating |
       |mickeymouse@example.com|pass123 |   3   |
       #|wirtualtm@example.com  |pass123 |   4   |
-
-

@@ -97,27 +97,27 @@ public class ProductReviewImpl
     public void user_should_be_able_to_see_their_rating_and_comment_below_the_input_field(String comment)
     {
         //maximized
-        /*new WebDriverWait(driver, Duration.ofSeconds(35));
+        new WebDriverWait(driver, Duration.ofSeconds(35));
           WebElement topReviewComment = driver.findElement
                   (By.xpath("//*[@id='root']/div[2]/div[3]/div[3]/div/div/div[1]/div/p[3]"));
           String topCommentText = topReviewComment.getText();
-         Assert.assertEquals(comment, topCommentText);*/
-        //Checking to make sure that the comment was created and the number of reviews should be three now
-        Assert.assertEquals(3, review.reviewsAllTexts.size());
+         Assert.assertEquals(comment, topCommentText);
     }
     @Then("User should be able to see their rating and comment below {string}")
     public void user_should_be_able_to_see_their_rating_and_comment_below(String comment)
     {
         //minimized
-        //Checking to make sure that the comment was created and the number of reviews should be three now
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated
-                (By.xpath("/html/body/div[2]/div[3]/div/div[6]/div/div/div[1]/div/div/button")));
-        Assert.assertEquals(3, review.reviewsAllTexts.size());
+        new WebDriverWait(driver, Duration.ofSeconds(35));
+        WebElement topReviewComment = driver.findElement
+                (By.xpath("/html/body/div[2]/div[3]/div/div[6]/div/div/div[1]/div/p[3]"));
+        String topCommentText = topReviewComment.getText();
+        Assert.assertEquals(comment, topCommentText);
     }
     @Then("User will not be able to see their review")
     public void user_will_not_be_able_to_see_their_review()
     {
         //The number of reviews for this product should be three now
-        Assert.assertEquals(review.reviewsAllTexts.size()+1, review.reviewsAllTexts.size());
+        Assert.fail("Comment was not posted.");
     }
 }
+

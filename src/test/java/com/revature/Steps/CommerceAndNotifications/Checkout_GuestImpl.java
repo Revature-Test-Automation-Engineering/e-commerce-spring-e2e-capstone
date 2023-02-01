@@ -43,7 +43,7 @@ public class Checkout_GuestImpl {
         WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div/div[1]/div/div[2]/div[2]/strong")));
 
-        page.logout.click();
+        page.logoutButton.click();
 
         page.mainPageBtn.click();
 

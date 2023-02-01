@@ -1,5 +1,6 @@
 Feature: Create/Update Product Page - Positive
 
+
   Scenario Outline: Admin creates a new product
     Given The admin is logged in
     When Admin clicks the Edit Product button

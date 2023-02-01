@@ -30,11 +30,12 @@ public class Page
 	@FindBy(xpath = "//strong[contains(text(),'ORDERS')]")
 	public WebElement orders;
 
+	@FindBy(xpath = "//strong[contains(text(),'SIGN IN')]")
+	public WebElement signInButton;
 	@FindBy(xpath = "//strong[contains(text(),'LOGOUT')]")
-	public WebElement logout;
+	public WebElement logoutButton;
 
-	//Updated cart button
-	@FindBy(xpath = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[3]/span[1]/*[1]")
+	@FindBy(xpath = "/html/body/div/div[1]/div/div[2]/div[3]/span")
 	public WebElement cartBtn;
 
 	@FindBy(xpath = "//strong[contains(text(),'REGISTER')]")

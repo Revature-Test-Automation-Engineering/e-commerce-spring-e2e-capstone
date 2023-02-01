@@ -77,13 +77,11 @@ public class CartPage extends Page {
         List<WebElement> rows = cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
         return rows.get(rowNumber).findElement(By.xpath("//div[1]/div[1]/span[1]"));
     }
-
     // GIVES THE ELEMENT CONTAINING THE PRODUCT ID # BASED UPON ROW NUMBER
     public WebElement productIDByRowNumber(int rowNumber) {
         List<WebElement> rows = cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
         return rows.get(rowNumber).findElement(By.xpath("//div[1]/div[1]/span[2]"));
     }
-
     // GIVES THE ELEMENT THAT CONTAINS THE PRODUCT IMAGE
     public WebElement productImageByRowNumber(int rowNumber) {
         List<WebElement> rows = cartBody.findElements(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div"));
@@ -113,4 +111,7 @@ public class CartPage extends Page {
 
     @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[2]/div[2]/div[4]/span[2]")
     public WebElement totalPriceAmount;
+
+    @FindBy(xpath="//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div")
+    public List<WebElement> items;
 }

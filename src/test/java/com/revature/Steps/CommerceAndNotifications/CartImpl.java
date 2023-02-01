@@ -71,7 +71,7 @@ public class CartImpl {
 
         driver.get("http://localhost:3000/login");
 
-        page.logout.click();
+        page.logoutButton.click();
 
         page.mainPageBtn.click();
 

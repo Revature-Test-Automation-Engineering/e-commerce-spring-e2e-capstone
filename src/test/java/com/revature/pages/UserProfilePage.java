@@ -47,4 +47,17 @@ public class UserProfilePage extends Page {
 
     @FindBy(xpath="//button[contains(text(),'DELETE')][last()]")
     public WebElement deleteButton;
+
+
+    @FindBy(xpath = "//div[contains(text(),'successfully updated your profile')]")
+    public WebElement profileSuccessMessage;
+
+    @FindBy(xpath = "//div[contains(text(),'successfully added your payment method')]")
+    public WebElement cardSuccessMessage;
+
+    @FindBy(xpath = "//div[contains(text(),'successfully removed your payment method')]")
+    public WebElement removeSuccessMessage;
+
+
+
 }

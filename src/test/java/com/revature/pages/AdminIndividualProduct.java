@@ -27,7 +27,7 @@ public class AdminIndividualProduct extends Page {
     @FindBy(xpath = "//h4")
     public WebElement productPrice;
 
-    @FindBy(xpath = "//h5")
+    @FindBy(xpath = "/html/body/div/div[2]/div/div/div[2]/h5")
     public WebElement productDescription;
 
     //not sure if ID's stay constant when wrapped by colons, eg: ':idName:'. Located by labels instead

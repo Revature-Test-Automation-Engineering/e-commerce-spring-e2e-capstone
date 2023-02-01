@@ -24,7 +24,7 @@ public class ResetPasswordPage extends Page {
     public WebElement furtherNavigationInfo;
 
     // new password input field
-    @FindBy(xpath = "(//input)[2]")
+    @FindBy(xpath = "//input[@id='password']")
     public WebElement newPasswordInputField;
 
     // reset password button
