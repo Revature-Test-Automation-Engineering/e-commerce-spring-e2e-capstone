@@ -1,5 +1,5 @@
 Feature: Reset Password - Negative
-  Scenario: User resets password with invalid password
+  Scenario Outline: User resets password with invalid password
     Given the user is on the login page
     When  the user clicks on the reset your password link
     Then  the user should be on the forgot password page
@@ -15,7 +15,7 @@ Feature: Reset Password - Negative
     And   the user clicks on the reset password button
     Then  the user should not be on the login page
     When  the user enters their new credentials into the form and clicks on the sign in button
-    Then  the user should be not be on the home page after resetting their password
+    Then  the user should not be on the home page after resetting their password
 
     Examples:
       | password   |
