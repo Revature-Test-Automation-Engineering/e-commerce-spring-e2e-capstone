@@ -77,4 +77,3 @@ Feature: User can manage their profile
     Then Deactivate button becomes enabled
     When User clicks DEACTIVATE button
     Then User will be logged out and can no longer log in again
-

@@ -22,7 +22,7 @@ public class DisplayProductsImpl {
     public WebDriver driver = ProductAndReviewRunnerTest.driver;
     public LoginPage loginPage = ProductAndReviewRunnerTest.loginPage;
     public MainPage mainPage = ProductAndReviewRunnerTest.mainPage;
-    public Page page = ProductAndReviewRunnerTest.page;
+    //public Page page = ProductAndReviewRunnerTest.page;
 
     @Given("the guest is on the guest page")
 

@@ -7,7 +7,7 @@ Feature: Login
     Then  the user or admin should be on the home page
 
     Examples:
-    | email                     | password  |
-    | tets@gmail.com            | !test123  |
-    | nameynamenson@example.com | pass123   |
+      | email                     | password  |
+      | tets@gmail.com            | !test123  |
+      | nameynamenson@example.com | pass123   |
 

@@ -179,7 +179,7 @@ public class ManageProfileImpl {
     @When("User types deactivate in the confirmation field")
     public void user_types_deactivate_in_the_confirmation_field(String docString) {
         //create new user to deactivate
-        userProfilePage.logout.click();
+        userProfilePage.logoutButton.click();
         new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.visibilityOf(loginPage.register));
 
