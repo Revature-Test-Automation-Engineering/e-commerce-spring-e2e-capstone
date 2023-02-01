@@ -2,7 +2,6 @@ package com.revature.Steps.UserManagement;
 
 import com.revature.pages.*;
 import com.revature.runners.UserManagementRunner;
-import com.revature.runners.UserProfileTestRunner;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,11 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.*;
 
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.UUID;
 
 public class ManageProfileImpl {

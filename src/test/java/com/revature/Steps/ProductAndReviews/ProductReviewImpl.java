@@ -120,3 +120,4 @@ public class ProductReviewImpl
         Assert.fail("Comment was not posted.");
     }
 }
+
