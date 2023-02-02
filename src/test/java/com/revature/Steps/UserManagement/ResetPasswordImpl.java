@@ -1,5 +1,9 @@
 package com.revature.Steps.UserManagement;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.revature.helperfunctions.HelperFunctions;
 import com.revature.pages.ForgotPasswordPage;
 import com.revature.pages.LoginPage;
 import com.revature.pages.MainPage;
@@ -13,6 +17,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +40,6 @@ public class ResetPasswordImpl {
 
     @Given("the user is on the login page")
     public void theUserIsOnTheLoginPage() {
-        WebDriver tempDriver = new ChromeDriver();
-        driver.quit();
-
-        driver = tempDriver;
         driver.get("http://localhost:3000/login");
 
         loginPage = new LoginPage(driver);
@@ -79,65 +84,12 @@ public class ResetPasswordImpl {
        assertTrue(forgotPasswordPage.infoParagraph.getText().contains(message));
     }
 
-    @When("the user goes to their email")
+    @When("the user goes to their email and clicks on the sent link")
     public void theUserGoesToTheirEmail() throws InterruptedException {
-        Thread.sleep(20000);
+        Thread.sleep(2000);
 
-        driver.get("https://gmail.com/");
-
-        WebElement emailInput = driver.findElement(By.xpath("//input[@type='email']"));
-
-        new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.elementToBeClickable(emailInput));
-
-        emailInput.sendKeys("testymctesterson221205@gmail.com");
-
-        WebElement submitButton = driver.findElement(By.xpath("//span[text()='Next']"));
-        submitButton.click();
-
-
-        new WebDriverWait(driver, Duration.ofSeconds(20))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='Passwd']")));
-        WebElement passwordInput = driver.findElement(By.xpath("//input[@name='Passwd']"));
-        passwordInput.sendKeys("pass123!!!");
-
-
-        new WebDriverWait(driver, Duration.ofSeconds(20))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Next']")));
-        submitButton = driver.findElement(By.xpath("//span[text()='Next']"));
-        submitButton.click();
-
-        new WebDriverWait(driver, Duration.ofSeconds(20))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//tbody")));
-    }
-
-    @Then("the user should see an unread email with the title Reset your Congo Password")
-    public void theUserShouldSeeAnUnreadEmailWithTheTitleResetYourCongoPassword() {
-        WebElement emailList = driver.findElement(By.xpath("(//tbody)[6]"));
-
-        WebElement emailTitle = emailList.findElement(By.xpath("./tr[1]/td[5]/div/div/div/span/span"));
-
-        assertEquals("Reset your Congo Password", emailTitle.getText());
-    }
-
-    @When("the user clicks on the email")
-    public void theUserClicksOnTheEmail() {
-        WebElement emailList = driver.findElement(By.xpath("(//tbody)[6]"));
-        emailList.findElement(By.xpath("./tr[1]/td[5]/div/div/div/span/span")).click();
-    }
-
-    @And("the user clicks on the provided link")
-    public void theUserClicksOnTheProvidedLink() {
-        try {
-            WebElement link = driver.findElement(By.xpath("(//a[contains(@href, 'localhost')])[last()]"));
-            link.click();
-        } catch (Exception e) {
-            new WebDriverWait(driver, Duration.ofSeconds(5))
-                    .until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@href, 'localhost')]"))));
-
-            WebElement link = driver.findElement(By.xpath("(//a[contains(@href, 'localhost')])[last()]"));
-            link.click();
-        }
+        String link = HelperFunctions.getMostRecentEmailLink();
+        driver.get(link);
     }
 
     @Then("the user should be on the reset password page")
@@ -147,10 +99,6 @@ public class ResetPasswordImpl {
         boolean onResetPasswordPage = true;
 
         try {
-            List<String> handles = new ArrayList<>(driver.getWindowHandles());
-            driver.close();
-            driver.switchTo().window(handles.get(1));
-
             new WebDriverWait(driver, Duration.ofSeconds(5))
                     .until(ExpectedConditions.elementToBeClickable(resetPasswordPage.newPasswordInputField));
         } catch (TimeoutException e) {
@@ -188,7 +136,7 @@ public class ResetPasswordImpl {
 
     @When("the user enters their new credentials into the form and clicks on the sign in button")
     public void theUserEntersTheirNewCredentialsIntoTheFormAndClicksOnTheSignInButton() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
         loginPage = new LoginPage(driver);
 
