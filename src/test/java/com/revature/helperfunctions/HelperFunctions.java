@@ -68,7 +68,7 @@ public class HelperFunctions {
             URL obj = new URL("https://mailtrap.io/api/accounts/1470429/inboxes/2084130/messages");
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
             con.setRequestMethod("GET");
-            con.setRequestProperty("API-Token", "d6ef45e0d4812c01773811016a747492");
+            con.setRequestProperty("API-Token", System.getenv("MAILTRAP_TOKEN"));
             int responseCode = con.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) { // success
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -96,7 +96,7 @@ public class HelperFunctions {
             URL obj = new URL("https://mailtrap.io/api/accounts/1470429/inboxes/2084130/messages/" + emailId + "/body.txt");
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
             con.setRequestMethod("GET");
-            con.setRequestProperty("API-Token", "d6ef45e0d4812c01773811016a747492");
+            con.setRequestProperty("API-Token", System.getenv("MAILTRAP_TOKEN"));
             int responseCode = con.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) { // success
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
