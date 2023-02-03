@@ -40,29 +40,30 @@ public class ProductReviewImpl
         login.signInButton.click();
     }
     @When("User types product name in the search box")
-    public void user_types_product_name_in_the_search_box()
-    {
+    public void user_types_product_name_in_the_search_box() throws InterruptedException {
         standardWait(driver, main.searchBarInput);
-        main.searchBarInput.sendKeys("Shrek Crocs");
+        main.searchBarInput.sendKeys("TShirt");
         main.searchBarSearchButton.click();
+        Thread.sleep(2000);
     }
     @When("User clicks the appropriate product")
-    public void user_clicks_the_appropriate_product()
-    {
+    public void user_clicks_the_appropriate_product() throws InterruptedException {
 //        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated
 //                (By.xpath("//*[@id='root']/div[3]/div/div/div[1]/div[2]/div")));
         WebElement magGlass = driver.findElement
-                (By.xpath("//*[@id='root']/div[3]/div/div/div[1]/div[2]/div"));
+                (By.xpath("//div[@aria-label = 'view-product-details']"));
+
         Actions hover = new Actions(driver);
         hover.moveToElement(mainPage.firstProductOnPage).perform();
         hover.moveToElement(magGlass).click().perform();
+
     }
     @Then("User is on the product review page")
-    public void user_is_on_the_product_review_page()
-    {
+    public void user_is_on_the_product_review_page() throws InterruptedException {
         String checkReviewPage = driver.findElement
-                (By.xpath("//*[@id='customized-dialog-title']")).getText();
-        Assert.assertEquals("Shrek Crocs", checkReviewPage);
+                (By.xpath("//*[@id=\"root\"]/div[3]/div[1]//div[2]//div[1]/h5")).getText();
+        Assert.assertEquals("Veto", checkReviewPage);
+        Thread.sleep(2000);
     }
     @When("User clicks page enlarge arrow mark")
     public void user_clicks_page_enlarge_arrow_mark()
@@ -103,7 +104,7 @@ public class ProductReviewImpl
           String topCommentText = topReviewComment.getText();
          Assert.assertEquals(comment, topCommentText);*/
         //Checking to make sure that the comment was created and the number of reviews should be three now
-        Assert.assertEquals(3, review.reviewsAllTexts.size());
+        Assert.assertEquals(2, review.reviewsAllTexts.size());
     }
     @Then("User should be able to see their rating and comment below {string}")
     public void user_should_be_able_to_see_their_rating_and_comment_below(String comment)
@@ -111,13 +112,14 @@ public class ProductReviewImpl
         //minimized
         //Checking to make sure that the comment was created and the number of reviews should be three now
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated
-                (By.xpath("/html/body/div[2]/div[3]/div/div[6]/div/div/div[1]/div/div/button")));
-        Assert.assertEquals(3, review.reviewsAllTexts.size());
+                (By.xpath("//div[2]/div[3]//div[6]//div[1]//button")));
+        Assert.assertEquals(2, review.reviewsAllTexts.size());
     }
+
     @Then("User will not be able to see their review")
-    public void user_will_not_be_able_to_see_their_review()
-    {
+    public void user_will_not_be_able_to_see_their_review() throws InterruptedException {
         //The number of reviews for this product should be three now
         Assert.assertEquals(review.reviewsAllTexts.size()+1, review.reviewsAllTexts.size());
+        Thread.sleep(2000);
     }
 }

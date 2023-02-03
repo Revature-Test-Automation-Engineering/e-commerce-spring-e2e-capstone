@@ -1,13 +1,16 @@
 package com.revature.Steps.ProductAndReviews;
 
+import com.revature.helperfunctions.HelperFunctions;
 import com.revature.pages.MainPage;
 import com.revature.runners.ProductAndReviewRunnerTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import com.revature.pages.LoginPage;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -44,6 +47,7 @@ public class DisplayProductsImpl {
         loginPage.emailField.sendKeys(email);
         loginPage.passwordField.sendKeys(pwd);
         loginPage.signInButton.click();
+
     }
     @Then("the user should be on the home page")
     public void the_user_should_be_on_the_home_page() {
@@ -63,5 +67,10 @@ public class DisplayProductsImpl {
     @Then("user is in the sign in page")
     public void the_is_in_the_sign_in_page(){
         assertEquals(loginPage.signInHeader.getText(), "Sign in");
+    }
+    @Then("user can see number of links in the page")
+    public void user_can_see_number_of_links_in_the_page(){
+        WebElement links = driver.findElement(By.tagName("svg"));
+        System.out.println("Number of links: " + links.getSize());
     }
 }

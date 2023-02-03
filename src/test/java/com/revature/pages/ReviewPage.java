@@ -76,6 +76,8 @@ public class ReviewPage extends Page {
 
     @FindBy(xpath = "//h4[contains(text(), 'Product Reviews')]/../div/div/div/div/p[3]")
     public List<WebElement> reviewsAllTexts;
-    //
+
+    @FindBy(xpath = "//div[2]/div[3]//div[6]/div")
+    public WebElement reveiwList;
 
 }

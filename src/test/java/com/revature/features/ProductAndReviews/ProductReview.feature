@@ -13,8 +13,8 @@ Feature: Product Review
     Then User should be able to see their rating and comment below the input field "<comment>"
 
     Examples:
-      |       username        |password|rating |                comment                |
-      |mickeymouse@example.com|pass123 |   3   |             It works fine.            |
+      |       username        ||password  |   |rating |   |  comment       |
+      |jack@gmail.com|     |Pass1234# |   |   3   |   | It works fine. |
       #|wirtualtm@example.com  |pass123 |   4   |           I really like it!           |
 
   Scenario Outline: (minimized)User reviews product
@@ -28,8 +28,8 @@ Feature: Product Review
     Then User should be able to see their rating and comment below "<comment>"
 
     Examples:
-      |       username        |password|rating |                comment                   |
-      |mickeymouse@example.com|pass123 |   3   |             It works fine. 2             |
+      |       username    |       |password   |    |rating |  |    comment      |
+      |jack@gmail.com     |       |Pass1234#  |    |   3   |  | It works fine. 2 |
       #|wirtualtm@example.com  |pass123 |   4   |           I really like it! 2            |
 
 
@@ -43,8 +43,8 @@ Feature: Product Review
     Then User will not be able to see their review
 
     Examples:
-      |       username        |password|rating |
-      |mickeymouse@example.com|pass123 |   3   |
+      |       username |       |password  |   |rating |
+      |jack@gmail.com   |      |Pass1234# |   |   3   |
       #|wirtualtm@example.com  |pass123 |   4   |
 
 

@@ -6,17 +6,15 @@
 	<groupId>com.revature</groupId>
 	<artifactId>e-commerce</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-
 	<name>e-commerce</name>
 	<description>Demo project for Spring Boot</description>
+
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
     </properties>
 
-
     <dependencies>
-
 		<!-- e2e testing dependencies -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -29,7 +27,6 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.2.3</version>
 		</dependency>
-
 
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 		<dependency>
@@ -58,6 +55,4 @@
 		</dependency>
 
 	</dependencies>
-
-
 </project>
