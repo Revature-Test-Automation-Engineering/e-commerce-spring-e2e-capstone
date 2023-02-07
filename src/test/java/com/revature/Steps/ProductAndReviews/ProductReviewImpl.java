@@ -47,10 +47,9 @@ public class ProductReviewImpl
         main.searchBarSearchButton.click();
     }
     @When("User clicks the appropriate product")
-    public void user_clicks_the_appropriate_product()
+    public void user_clicks_the_appropriate_product() throws InterruptedException
     {
-//        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated
-//                (By.xpath("//*[@id='root']/div[3]/div/div/div[1]/div[2]/div")));
+        Thread.sleep(3000);
         WebElement magGlass = driver.findElement
                 (By.xpath("//*[@id='root']/div[3]/div/div/div[1]/div[2]/div"));
         Actions hover = new Actions(driver);
