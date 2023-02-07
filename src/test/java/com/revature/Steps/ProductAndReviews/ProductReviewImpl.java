@@ -31,39 +31,6 @@ public class ProductReviewImpl
     MainPage main = new MainPage(driver);
     ReviewPage review = new ReviewPage(driver);
 
-    package com.revature.Steps.ProductAndReviews;
-
-import com.revature.pages.LoginPage;
-import com.revature.pages.MainPage;
-import com.revature.pages.ReviewPage;
-import com.revature.runners.ProductAndReviewRunnerTest;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
-import static com.revature.helperfunctions.HelperFunctions.standardWait;
-//standardWait(driver, loginPage.emailField);
-import static com.revature.runners.ProductAndReviewRunnerTest.*;
-import static java.lang.Integer.parseInt;
-
-public class ProductReviewImpl
-{
-
-    public WebDriver driver = ProductAndReviewRunnerTest.driver;
-    LoginPage login = new LoginPage(driver);
-    MainPage main = new MainPage(driver);
-    ReviewPage review = new ReviewPage(driver);
-
     @Given("User logged in with username {string}  and password {string}")
     public void user_logged_in_with_username_and_password(String username, String password)
     {
@@ -151,8 +118,5 @@ public class ProductReviewImpl
         //The number of reviews for this product should be three now
         Assert.fail("Comment was not posted.");
     }
-}
-
-
 }
 
